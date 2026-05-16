@@ -1,1652 +1,713 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Суставит — Свобода движения</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --blue: #2196F3;
-    --blue-dark: #1565C0;
-    --blue-mid: #42A5F5;
-    --blue-light: #E3F2FD;
-    --blue-bg: #1976D2;
-    --white: #ffffff;
-    --text-dark: #1A2233;
-    --text-mid: #455A74;
-    --text-light: #7A8FA6;
-    --border: #D0E4F7;
-    --radius: 12px;
-    --radius-sm: 8px;
-    --section-gap: 80px;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Open Sans', sans-serif;
-    color: var(--text-dark);
-    background: #fff;
-    line-height: 1.6;
-    font-size: 15px;
-  }
-
-  h1, h2, h3, h4 {
-    font-family: 'Raleway', sans-serif;
-    line-height: 1.25;
-  }
-
-  img { display: block; max-width: 100%; }
-
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ─── NAV ─── */
-  .nav {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 18px 0;
-  }
-  .nav .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    color: #fff;
-    letter-spacing: 1px;
-    text-decoration: none;
-  }
-  .nav-links {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-  }
-  .nav-links a {
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color .2s;
-  }
-  .nav-links a:hover { color: #fff; }
-  .nav-btn {
-    background: rgba(255,255,255,0.18);
-    border: 1.5px solid rgba(255,255,255,0.5);
-    color: #fff;
-    padding: 8px 22px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background .2s;
-    font-family: 'Raleway', sans-serif;
-  }
-  .nav-btn:hover { background: rgba(255,255,255,0.3); }
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-  }
-
-  /* ─── HERO ─── */
-  .hero {
-    background: linear-gradient(135deg, #1565C0 0%, #1976D2 35%, #2196F3 70%, #42A5F5 100%);
-    min-height: 560px;
-    position: relative;
-    overflow: hidden;
-    padding-top: 90px;
-    padding-bottom: 60px;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Ccircle cx='500' cy='50' r='280' fill='rgba(255,255,255,0.04)'/%3E%3Ccircle cx='100' cy='350' r='200' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") no-repeat center;
-    background-size: cover;
-  }
-  .hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 40px;
-    position: relative;
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    letter-spacing: .5px;
-    text-transform: uppercase;
-  }
-  .hero-badge::before {
-    content: '';
-    display: block;
-    width: 6px; height: 6px;
-    background: #90CAF9;
-    border-radius: 50%;
-  }
-  .hero h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 16px;
-    line-height: 1.1;
-  }
-  .hero-sub {
-    color: rgba(255,255,255,0.85);
-    font-size: 16px;
-    margin-bottom: 28px;
-    max-width: 420px;
-  }
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #fff;
-    color: var(--blue-dark);
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 14px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: transform .2s, box-shadow .2s;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  }
-  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
-  .hero-cta svg { flex-shrink: 0; }
-  .hero-stats {
-    display: flex;
-    gap: 28px;
-    margin-top: 32px;
-  }
-  .hero-stat {
-    color: rgba(255,255,255,0.9);
-    font-size: 13px;
-  }
-  .hero-stat strong {
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: #fff;
-  }
-  .hero-img-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  .hero-product {
-    width: 280px;
-    height: 300px;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
-    animation: float 4s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-  }
-  .hero-wave {
-    position: absolute;
-    bottom: -1px; left: 0; right: 0;
-  }
-
-  /* ─── BTN ─── */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--blue);
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 12px 26px;
-    border-radius: 50px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background .2s, transform .2s;
-  }
-  .btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent;
-    border: 2px solid var(--blue);
-    color: var(--blue);
-  }
-  .btn-outline:hover { background: var(--blue); color: #fff; }
-  .btn-white {
-    background: #fff;
-    color: var(--blue-dark);
-  }
-  .btn-white:hover { background: #E3F2FD; }
-
-  /* ─── SECTION TITLES ─── */
-  .section-label {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 10px;
-  }
-  .section-title {
-    font-size: clamp(24px, 3vw, 36px);
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 14px;
-  }
-  .section-desc {
-    color: var(--text-mid);
-    font-size: 15px;
-    max-width: 560px;
-  }
-  .text-center { text-align: center; }
-  .text-center .section-desc { margin: 0 auto; }
-
-  /* ─── ABOUT ─── */
-  .about {
-    padding: var(--section-gap) 0;
-  }
-  .about .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  .about-img-wrap {
-    position: relative;
-  }
-  .about-img {
-    width: 100%;
-    height: 380px;
-    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .about-img svg { width: 200px; opacity: .7; }
-  .about-badge-float {
-    position: absolute;
-    bottom: 24px; right: -16px;
-    background: #fff;
-    border-radius: 14px;
-    padding: 14px 18px;
-    box-shadow: 0 8px 24px rgba(21,101,192,.15);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-  }
-  .about-badge-float .icon-circle {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: var(--blue-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .about-badge-float strong {
-    display: block;
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--text-dark);
-  }
-  .about-badge-float span { color: var(--text-light); font-size: 12px; }
-  .about-content h2 { margin-bottom: 16px; }
-  .about-content p { color: var(--text-mid); margin-bottom: 16px; }
-  .about-checks {
-    list-style: none;
-    margin: 20px 0 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .about-checks li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 14px;
-    color: var(--text-mid);
-  }
-  .check-icon {
-    flex-shrink: 0;
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    background: var(--blue-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-  }
-  .check-icon svg { width: 11px; }
-
-  /* ─── PROBLEMS ─── */
-  .problems {
-    background: #F7FBFF;
-    padding: var(--section-gap) 0;
-  }
-  .problems-grid {
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .problem-card {
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    padding: 28px 24px;
-    transition: transform .2s, box-shadow .2s;
-  }
-  .problem-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(21,101,192,.1); }
-  .problem-icon {
-    width: 52px; height: 52px;
-    border-radius: 14px;
-    background: var(--blue-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .problem-icon svg { width: 26px; }
-  .problem-card h3 {
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text-dark);
-  }
-  .problem-card p {
-    font-size: 14px;
-    color: var(--text-mid);
-    line-height: 1.65;
-  }
-
-  /* ─── FLOW / HOW IT WORKS ─── */
-  .how {
-    padding: var(--section-gap) 0;
-  }
-  .flow {
-    margin-top: 52px;
-    display: grid;
-    grid-template-columns: 1fr 48px 1fr 48px 1fr 48px 1fr;
-    align-items: center;
-    gap: 0;
-  }
-  .flow-step {
-    background: var(--blue);
-    border-radius: var(--radius);
-    padding: 22px 18px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-  }
-  .flow-step.light {
-    background: var(--blue-light);
-    color: var(--text-dark);
-  }
-  .flow-step .step-num {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    opacity: .7;
-    margin-bottom: 6px;
-  }
-  .flow-step h4 {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.3;
-  }
-  .flow-step p {
-    font-size: 12px;
-    opacity: .8;
-    margin-top: 6px;
-    line-height: 1.5;
-  }
-  .flow-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blue-mid);
-  }
-  .flow-arrow svg { width: 24px; }
-
-  /* ─── INGREDIENTS ─── */
-  .ingredients {
-    background: #F7FBFF;
-    padding: var(--section-gap) 0;
-  }
-  .ingredients-grid {
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-  .ingredient-card {
-    background: #fff;
-    border-radius: var(--radius);
-    border: 1.5px solid var(--border);
-    padding: 24px 18px;
-    text-align: center;
-    transition: transform .2s;
-  }
-  .ingredient-card:hover { transform: translateY(-3px); }
-  .ingredient-img {
-    width: 90px; height: 90px;
-    margin: 0 auto 14px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .ingredient-img svg { width: 48px; }
-  .ingredient-card h4 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .ingredient-card p {
-    font-size: 13px;
-    color: var(--text-mid);
-    line-height: 1.55;
-  }
-
-  /* ─── PRODUCT SHOWCASE ─── */
-  .showcase {
-    padding: var(--section-gap) 0;
-  }
-  .showcase .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  .showcase-img {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  .showcase-product {
-    width: 280px;
-    height: 300px;
-    filter: drop-shadow(0 16px 40px rgba(21,101,192,.2));
-  }
-  .showcase-badge {
-    position: absolute;
-    top: 20px; left: 0;
-    background: var(--blue);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 50px;
-  }
-  .showcase-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0 28px;
-  }
-  .showcase-tag {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--blue-light);
-    color: var(--blue-dark);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 50px;
-  }
-  .showcase-tag svg { width: 14px; }
-
-  /* ─── QUOTE BLOCK ─── */
-  .quote-section {
-    background: linear-gradient(135deg, #1565C0, #1976D2, #2196F3);
-    padding: var(--section-gap) 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .quote-section::before {
-    content: '';
-    position: absolute;
-    right: -100px; top: -100px;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.05);
-  }
-  .quote-section .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    position: relative;
-  }
-  .quote-img {
-    width: 260px;
-    height: 260px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  .quote-content blockquote {
-    font-family: 'Raleway', sans-serif;
-    font-size: clamp(20px, 2.5vw, 28px);
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.35;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  .quote-content blockquote::before {
-    content: '"';
-    font-size: 72px;
-    color: rgba(255,255,255,0.15);
-    font-family: Georgia, serif;
-    position: absolute;
-    top: -20px; left: -10px;
-    line-height: 1;
-  }
-  .quote-content p {
-    color: rgba(255,255,255,0.8);
-    font-size: 14px;
-    margin-bottom: 28px;
-  }
-
-  /* ─── SOCIAL PROOF ─── */
-  .social-proof {
-    padding: var(--section-gap) 0;
-    background: #F7FBFF;
-  }
-  .social-proof .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  .sp-img {
-    width: 100%;
-    height: 380px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #BBDEFB, #90CAF9);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .sp-img svg { width: 180px; }
-  .sp-content h2 { margin-bottom: 16px; }
-  .sp-content p { color: var(--text-mid); margin-bottom: 20px; }
-  .sp-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 24px 0;
-  }
-  .sp-pill {
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: 50px;
-    padding: 8px 16px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-dark);
-  }
-
-  /* ─── COMPARISON ─── */
-  .comparison {
-    padding: var(--section-gap) 0;
-  }
-  .comparison-table-wrap {
-    margin-top: 48px;
-    overflow-x: auto;
-    border-radius: var(--radius);
-    border: 1.5px solid var(--border);
-  }
-  .comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    min-width: 520px;
-  }
-  .comparison-table th {
-    background: var(--blue);
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    padding: 16px 20px;
-    text-align: left;
-  }
-  .comparison-table th:first-child { background: #1565C0; border-radius: var(--radius) 0 0 0; }
-  .comparison-table th:last-child { border-radius: 0 var(--radius) 0 0; }
-  .comparison-table td {
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-mid);
-  }
-  .comparison-table tr:last-child td { border-bottom: none; }
-  .comparison-table tr:nth-child(even) td { background: #F7FBFF; }
-  .comparison-table .highlight td { font-weight: 600; color: var(--text-dark); }
-  .tick { color: #43A047; font-size: 18px; }
-  .cross { color: #E53935; font-size: 18px; }
-  .comparison-cta { margin-top: 36px; text-align: center; }
-
-  /* ─── UPSELL PRODUCTS ─── */
-  .upsell {
-    background: #F7FBFF;
-    padding: var(--section-gap) 0;
-  }
-  .upsell-grid {
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-  .upsell-card {
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    padding: 32px 28px;
-    display: flex;
-    gap: 28px;
-    align-items: center;
-    transition: box-shadow .2s;
-  }
-  .upsell-card:hover { box-shadow: 0 8px 28px rgba(21,101,192,.12); }
-  .upsell-product-img {
-    flex-shrink: 0;
-    width: 120px; height: 130px;
-    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .upsell-product-img svg { width: 70px; }
-  .upsell-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-  .upsell-card p { font-size: 14px; color: var(--text-mid); margin-bottom: 16px; }
-  .upsell-price {
-    font-family: 'Raleway', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--blue);
-    margin-bottom: 16px;
-  }
-  .upsell-price span { font-size: 14px; color: var(--text-light); font-weight: 400; text-decoration: line-through; margin-left: 8px; }
-
-  /* ─── FAQ ─── */
-  .faq {
-    padding: var(--section-gap) 0;
-  }
-  .faq-list {
-    margin-top: 48px;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-  .faq-item {
-    border-bottom: 1px solid var(--border);
-  }
-  .faq-item:last-child { border-bottom: none; }
-  .faq-q {
-    width: 100%;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'Raleway', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text-dark);
-    text-align: left;
-    transition: background .15s;
-  }
-  .faq-q:hover { background: #F7FBFF; }
-  .faq-q .faq-arrow {
-    flex-shrink: 0;
-    width: 24px; height: 24px;
-    border-radius: 50%;
-    background: var(--blue-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform .25s;
-  }
-  .faq-q .faq-arrow svg { width: 12px; stroke: var(--blue); }
-  .faq-q[aria-expanded="true"] .faq-arrow { transform: rotate(180deg); background: var(--blue); }
-  .faq-q[aria-expanded="true"] .faq-arrow svg { stroke: #fff; }
-  .faq-a {
-    display: none;
-    padding: 0 24px 20px;
-    font-size: 14px;
-    color: var(--text-mid);
-    line-height: 1.7;
-  }
-  .faq-a.open { display: block; }
-
-  /* ─── ORDER FORM ─── */
-  .order {
-    background: linear-gradient(135deg, #1565C0, #1976D2, #2196F3);
-    padding: var(--section-gap) 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .order::before {
-    content: '';
-    position: absolute;
-    left: -120px; bottom: -100px;
-    width: 450px; height: 450px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.04);
-  }
-  .order .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    position: relative;
-  }
-  .order-product {
-    display: flex;
-    justify-content: center;
-  }
-  .order-product-img {
-    width: 240px;
-    height: 260px;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
-    animation: float 4s ease-in-out infinite;
-  }
-  .order-form-wrap h2 {
-    font-size: clamp(22px, 3vw, 32px);
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 8px;
-  }
-  .order-form-wrap p {
-    color: rgba(255,255,255,0.75);
-    font-size: 14px;
-    margin-bottom: 28px;
-  }
-  .order-form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .order-form input, .order-form select {
-    background: rgba(255,255,255,0.12);
-    border: 1.5px solid rgba(255,255,255,0.25);
-    border-radius: var(--radius-sm);
-    padding: 13px 16px;
-    color: #fff;
-    font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
-    outline: none;
-    transition: border-color .2s;
-  }
-  .order-form input::placeholder { color: rgba(255,255,255,0.5); }
-  .order-form input:focus, .order-form select:focus { border-color: rgba(255,255,255,0.6); }
-  .order-form select { color: rgba(255,255,255,0.8); }
-  .order-form select option { background: #1565C0; }
-  .order-submit {
-    background: #fff;
-    color: var(--blue-dark);
-    font-family: 'Raleway', sans-serif;
-    font-weight: 800;
-    font-size: 15px;
-    border: none;
-    padding: 15px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform .2s;
-    margin-top: 6px;
-  }
-  .order-submit:hover { transform: translateY(-2px); }
-  .order-privacy {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  /* ─── FOOTER ─── */
-  .footer {
-    background: #0D1B2E;
-    padding: 48px 0 28px;
-  }
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 36px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .footer-brand p {
-    color: rgba(255,255,255,0.5);
-    font-size: 13px;
-    line-height: 1.7;
-    margin-top: 12px;
-  }
-  .footer-logo {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 800;
-    font-size: 24px;
-    color: #fff;
-    letter-spacing: 1px;
-  }
-  .footer-col h5 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 16px;
-  }
-  .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 10px; }
-  .footer-col ul a {
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    font-size: 13px;
-    transition: color .2s;
-  }
-  .footer-col ul a:hover { color: #fff; }
-  .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 24px;
-  }
-  .footer-bottom p {
-    font-size: 12px;
-    color: rgba(255,255,255,0.35);
-  }
-  .footer-socials {
-    display: flex;
-    gap: 12px;
-  }
-  .social-link {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.07);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: background .2s, color .2s;
-  }
-  .social-link:hover { background: var(--blue); color: #fff; }
-  .social-link svg { width: 16px; }
-
-  /* ─── MOBILE ─── */
-  @media (max-width: 768px) {
-    :root { --section-gap: 56px; }
-
-    .nav-links, .nav-btn { display: none; }
-    .nav-hamburger { display: flex; }
-
-    .hero .container {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    .hero-product { width: 220px; height: 240px; }
-    .hero-sub { margin: 0 auto 28px; }
-    .hero-stats { justify-content: center; }
-    .hero-img-wrap { order: -1; }
-
-    .about .container,
-    .showcase .container,
-    .quote-section .container,
-    .social-proof .container,
-    .order .container { grid-template-columns: 1fr; gap: 36px; }
-
-    .about-badge-float { right: 0; }
-    .problems-grid { grid-template-columns: 1fr; }
-
-    .flow {
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-    .flow-arrow { transform: rotate(90deg); }
-
-    .ingredients-grid { grid-template-columns: 1fr 1fr; }
-    .upsell-grid { grid-template-columns: 1fr; }
-    .upsell-card { flex-direction: column; text-align: center; }
-
-    .footer-top {
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-    .footer-bottom {
-      flex-direction: column;
-      gap: 16px;
-      text-align: center;
-    }
-
-    .comparison-table th, .comparison-table td { padding: 12px 14px; font-size: 13px; }
-
-    .order .container { grid-template-columns: 1fr; }
-    .order-product { order: -1; }
-  }
-
-  @media (max-width: 480px) {
-    .ingredients-grid { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr; }
-    .hero-stats { flex-wrap: wrap; gap: 16px; }
-  }
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav class="nav">
-  <div class="container">
-    <a href="#" class="nav-logo">F+F</a>
-    <ul class="nav-links">
-      <li><a href="#about">О продукте</a></li>
-      <li><a href="#how">Как работает</a></li>
-      <li><a href="#ingredients">Состав</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <button class="nav-btn">Купить сейчас</button>
-    <button class="nav-hamburger" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-text">
-      <div class="hero-badge">Новая формула 2024</div>
-      <h1>Свобода<br/>движения</h1>
-      <p class="hero-sub">Комплекс для суставов нового поколения. Питает, восстанавливает и снижает воспаление каждый день.</p>
-      <a href="#order" class="hero-cta">
-        Заказать сейчас
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16">
-          <path d="M4 10h12M10 4l6 6-6 6"/>
-        </svg>
-      </a>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>15 000+</strong>довольных клиентов</div>
-        <div class="hero-stat"><strong>98%</strong>отмечают эффект</div>
-        <div class="hero-stat"><strong>30+</strong>дней курс</div>
-      </div>
-    </div>
-    <div class="hero-img-wrap">
-      <!-- Product placeholder SVG -->
-      <svg class="hero-product" viewBox="0 0 280 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="140" cy="280" rx="90" ry="14" fill="rgba(0,0,0,0.15)"/>
-        <!-- Canister body -->
-        <rect x="55" y="60" width="170" height="200" rx="28" fill="white"/>
-        <!-- Blue cap -->
-        <rect x="60" y="38" width="160" height="52" rx="22" fill="#1565C0"/>
-        <rect x="68" y="44" width="144" height="38" rx="18" fill="#1976D2"/>
-        <!-- Label background -->
-        <rect x="65" y="95" width="150" height="140" rx="10" fill="#E3F2FD"/>
-        <!-- Product name text stand-in -->
-        <rect x="80" y="110" width="120" height="14" rx="7" fill="#1976D2"/>
-        <rect x="92" y="130" width="96" height="10" rx="5" fill="#42A5F5"/>
-        <!-- Molecule/joint icon -->
-        <circle cx="140" cy="175" r="28" fill="white"/>
-        <circle cx="140" cy="175" r="18" fill="#BBDEFB"/>
-        <circle cx="140" cy="163" r="6" fill="#1976D2"/>
-        <circle cx="151" cy="181" r="6" fill="#1976D2"/>
-        <circle cx="129" cy="181" r="6" fill="#1976D2"/>
-        <line x1="140" y1="163" x2="151" y2="181" stroke="#1976D2" stroke-width="2.5"/>
-        <line x1="140" y1="163" x2="129" y2="181" stroke="#1976D2" stroke-width="2.5"/>
-        <line x1="151" y1="181" x2="129" y2="181" stroke="#1976D2" stroke-width="2.5"/>
-        <!-- Barcode stand-in -->
-        <rect x="105" y="215" width="70" height="8" rx="3" fill="#90CAF9"/>
-        <!-- Bottom label -->
-        <rect x="55" y="245" width="170" height="15" rx="0 0 28 28" fill="#1565C0"/>
-        <rect x="55" y="245" width="170" height="15" rx="0" fill="#1565C0"/>
-      </svg>
-    </div>
-  </div>
-  <svg class="hero-wave" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <path d="M0 60 C360 0, 1080 0, 1440 60 L1440 60 L0 60Z" fill="white"/>
-  </svg>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-img-wrap">
-      <div class="about-img">
-        <!-- Joint anatomy placeholder -->
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="70" fill="#BBDEFB" opacity=".6"/>
-          <ellipse cx="100" cy="80" rx="28" ry="40" fill="#90CAF9"/>
-          <ellipse cx="100" cy="125" rx="32" ry="36" fill="#64B5F6"/>
-          <ellipse cx="100" cy="100" rx="22" ry="12" fill="white"/>
-          <ellipse cx="100" cy="100" rx="15" ry="8" fill="#BBDEFB"/>
-          <path d="M75 60 Q100 40 125 60" stroke="#1976D2" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <path d="M72 140 Q100 158 128 140" stroke="#1565C0" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <circle cx="100" cy="100" r="8" fill="#1976D2"/>
-          <circle cx="100" cy="100" r="4" fill="white"/>
-        </svg>
-      </div>
-      <div class="about-badge-float">
-        <div class="icon-circle">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1976D2" stroke-width="2.5" width="18" height="18">
-            <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-          </svg>
-        </div>
-        <div>
-          <strong>Клинически проверен</strong>
-          <span>Сертификат качества</span>
-        </div>
-      </div>
-    </div>
-    <div class="about-content">
-      <span class="section-label">О продукте</span>
-      <h2 class="section-title">Комплекс для тех, кто хочет свободно двигаться и заботиться о своих суставах каждый день.</h2>
-      <p>Суставит Эластика — это научно обоснованная формула, которая объединяет ключевые нутриенты для поддержания здоровья суставов, связок и хрящевой ткани.</p>
-      <ul class="about-checks">
-        <li>
-          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round"><path d="M1.5 6l3 3 6-6"/></svg></div>
-          <span>Натуральный состав без синтетических добавок</span>
-        </li>
-        <li>
-          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round"><path d="M1.5 6l3 3 6-6"/></svg></div>
-          <span>Результат уже с первых 2–3 недель приёма</span>
-        </li>
-        <li>
-          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round"><path d="M1.5 6l3 3 6-6"/></svg></div>
-          <span>Подходит для людей всех возрастов и уровней активности</span>
-        </li>
-        <li>
-          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round"><path d="M1.5 6l3 3 6-6"/></svg></div>
-          <span>Одобрен диетологами и спортивными врачами</span>
-        </li>
-      </ul>
-      <a href="#order" class="btn">Узнать больше</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEMS -->
-<section class="problems">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">Почему это важно</span>
-      <h2 class="section-title">Что происходит с суставами без заботы</h2>
-      <p class="section-desc">Ежедневная нагрузка, малоподвижный образ жизни и нехватка питательных веществ постепенно разрушают хрящевую ткань.</p>
-    </div>
-    <div class="problems-grid">
-      <div class="problem-card">
-        <div class="problem-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1976D2" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke-linecap="round"/>
-            <path d="M12 8v4l3 3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Боль и скованность</h3>
-        <p>Хроническая боль в суставах, особенно по утрам, сигнализирует о начале разрушения хрящевой ткани.</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1976D2" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Воспаление</h3>
-        <p>Регулярные воспалительные процессы разрушают синовиальную жидкость и приводят к деградации сустава.</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1976D2" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 12s1.5-3 4-3 4 3 4 3" stroke-linecap="round"/>
-            <line x1="9" y1="15" x2="9.01" y2="15" stroke-linecap="round" stroke-width="3"/>
-            <line x1="15" y1="15" x2="15.01" y2="15" stroke-linecap="round" stroke-width="3"/>
-          </svg>
-        </div>
-        <h3>Снижение подвижности</h3>
-        <p>Ограниченная амплитуда движения мешает полноценной жизни, спорту и даже бытовым занятиям.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">Механизм действия</span>
-      <h2 class="section-title">Как работает Суставит Эластика</h2>
-      <p class="section-desc">Четыре последовательных этапа для комплексного восстановления и защиты суставов.</p>
-    </div>
-    <div class="flow">
-      <div class="flow-step">
-        <div class="step-num">Шаг 1</div>
-        <h4>Питание хряща</h4>
-        <p>Глюкозамин и хондроитин проникают в хрящевую ткань</p>
-      </div>
-      <div class="flow-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </div>
-      <div class="flow-step light">
-        <div class="step-num">Шаг 2</div>
-        <h4>Снижение воспаления</h4>
-        <p>Омега-3 и куркумин блокируют воспалительные медиаторы</p>
-      </div>
-      <div class="flow-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </div>
-      <div class="flow-step">
-        <div class="step-num">Шаг 3</div>
-        <h4>Восстановление</h4>
-        <p>Коллаген II типа стимулирует регенерацию тканей сустава</p>
-      </div>
-      <div class="flow-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </div>
-      <div class="flow-step light">
-        <div class="step-num">Шаг 4</div>
-        <h4>Защита и гибкость</h4>
-        <p>Гиалуроновая кислота восстанавливает синовиальную жидкость</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INGREDIENTS -->
-<section class="ingredients" id="ingredients">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">Состав</span>
-      <h2 class="section-title">Ключевые компоненты</h2>
-      <p class="section-desc">Каждый ингредиент подобран с научной точностью и работает в синергии с остальными.</p>
-    </div>
-    <div class="ingredients-grid">
-      <div class="ingredient-card">
-        <div class="ingredient-img">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="16" fill="#BBDEFB"/>
-            <circle cx="24" cy="20" r="6" fill="#1976D2"/>
-            <circle cx="32" cy="30" r="5" fill="#1976D2"/>
-            <circle cx="16" cy="30" r="5" fill="#1976D2"/>
-            <line x1="24" y1="20" x2="32" y2="30" stroke="#1565C0" stroke-width="2"/>
-            <line x1="24" y1="20" x2="16" y2="30" stroke="#1565C0" stroke-width="2"/>
-          </svg>
-        </div>
-        <h4>Глюкозамин</h4>
-        <p>Строительный блок хряща. Стимулирует выработку коллагена и гиалуроновой кислоты.</p>
-      </div>
-      <div class="ingredient-card">
-        <div class="ingredient-img">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="16" fill="#BBDEFB"/>
-            <ellipse cx="24" cy="24" rx="12" ry="8" fill="#42A5F5"/>
-            <ellipse cx="24" cy="24" rx="6" ry="12" fill="#1976D2" opacity=".7"/>
-            <circle cx="24" cy="24" r="3" fill="white"/>
-          </svg>
-        </div>
-        <h4>Хондроитин</h4>
-        <p>Удерживает влагу в хряще, защищает от разрушения и повышает амортизацию сустава.</p>
-      </div>
-      <div class="ingredient-card">
-        <div class="ingredient-img">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="16" fill="#E1F5FE"/>
-            <path d="M16 24 Q24 12 32 24 Q24 36 16 24Z" fill="#1976D2" opacity=".5"/>
-            <path d="M16 24 Q24 16 32 24" stroke="#1565C0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <circle cx="24" cy="24" r="4" fill="#1565C0"/>
-          </svg>
-        </div>
-        <h4>Коллаген II типа</h4>
-        <p>Нативный коллаген для восстановления структуры хрящевой ткани и связок суставов.</p>
-      </div>
-      <div class="ingredient-card">
-        <div class="ingredient-img">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="16" fill="#E3F2FD"/>
-            <circle cx="24" cy="24" r="10" fill="#90CAF9"/>
-            <circle cx="24" cy="24" r="5" fill="#1976D2"/>
-            <circle cx="17" cy="18" r="3" fill="#42A5F5"/>
-            <circle cx="31" cy="18" r="3" fill="#42A5F5"/>
-          </svg>
-        </div>
-        <h4>Гиалуроновая кислота</h4>
-        <p>Восстанавливает синовиальную жидкость, обеспечивая смазку и плавность движений.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCT SHOWCASE -->
-<section class="showcase">
-  <div class="container">
-    <div class="showcase-img">
-      <svg class="showcase-product" viewBox="0 0 280 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="140" cy="285" rx="80" ry="10" fill="rgba(21,101,192,.1)"/>
-        <rect x="55" y="60" width="170" height="200" rx="28" fill="white" stroke="#BBDEFB" stroke-width="2"/>
-        <rect x="60" y="38" width="160" height="52" rx="22" fill="#1565C0"/>
-        <rect x="68" y="44" width="144" height="38" rx="18" fill="#1976D2"/>
-        <rect x="65" y="95" width="150" height="140" rx="10" fill="#E3F2FD"/>
-        <rect x="80" y="110" width="120" height="14" rx="7" fill="#1976D2"/>
-        <rect x="92" y="130" width="96" height="10" rx="5" fill="#42A5F5"/>
-        <circle cx="140" cy="185" r="30" fill="white" stroke="#BBDEFB" stroke-width="1.5"/>
-        <path d="M128 185 Q140 165 152 185 Q140 205 128 185Z" fill="#1976D2" opacity=".3"/>
-        <circle cx="140" cy="185" r="10" fill="#1976D2"/>
-        <circle cx="140" cy="185" r="5" fill="white"/>
-        <rect x="105" y="222" width="70" height="6" rx="3" fill="#90CAF9"/>
-      </svg>
-      <div class="showcase-badge">Суставит Эластика</div>
-    </div>
-    <div class="showcase-content">
-      <span class="section-label">Формула</span>
-      <h2 class="section-title">Питает. Восстанавливает. Снижает воспаление. Улучшает подвижность.</h2>
-      <p style="color: var(--text-mid); margin-bottom: 24px;">Комплексный препарат нового поколения на основе 8 клинически изученных компонентов. Без ГМО, без искусственных красителей.</p>
-      <div class="showcase-tags">
-        <div class="showcase-tag">
-          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.5 7l3.5 3.5 7.5-7.5"/></svg>
-          Без ГМО
-        </div>
-        <div class="showcase-tag">
-          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.5 7l3.5 3.5 7.5-7.5"/></svg>
-          Веганский состав
-        </div>
-        <div class="showcase-tag">
-          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.5 7l3.5 3.5 7.5-7.5"/></svg>
-          ISO сертификат
-        </div>
-        <div class="showcase-tag">
-          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.5 7l3.5 3.5 7.5-7.5"/></svg>
-          30 порций
-        </div>
-      </div>
-      <a href="#order" class="btn">Заказать Суставит Эластика</a>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<section class="quote-section">
-  <div class="container">
-    <div class="quote-img">
-      <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-        <!-- Powder in scoop illustration -->
-        <ellipse cx="90" cy="90" rx="70" ry="70" fill="rgba(255,255,255,0.1)"/>
-        <!-- Scoop shape -->
-        <path d="M40 100 Q40 60 80 50 L140 50 Q160 50 160 90 L155 110 Q145 130 120 130 L65 130 Q40 130 40 100Z" fill="rgba(255,255,255,0.85)"/>
-        <!-- Powder pile -->
-        <ellipse cx="100" cy="75" rx="45" ry="20" fill="white" opacity=".6"/>
-        <ellipse cx="100" cy="68" rx="35" ry="14" fill="white"/>
-        <!-- Handle -->
-        <rect x="120" y="125" width="60" height="14" rx="7" transform="rotate(25 120 125)" fill="rgba(255,255,255,0.7)"/>
-        <!-- Sparkles -->
-        <circle cx="55" cy="55" r="4" fill="rgba(255,255,255,0.5)"/>
-        <circle cx="145" cy="45" r="3" fill="rgba(255,255,255,0.4)"/>
-        <circle cx="40" cy="135" r="3" fill="rgba(255,255,255,0.3)"/>
-      </svg>
-    </div>
-    <div class="quote-content">
-      <blockquote>«Суставит Эластика» — система комплексного восстановления суставов</blockquote>
-      <p>Единственный препарат с запатентованной технологией BioMatrix™, которая обеспечивает максимальное усвоение активных компонентов в хрящевой ткани.</p>
-      <a href="#order" class="btn btn-white">Попробовать сейчас</a>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL PROOF -->
-<section class="social-proof">
-  <div class="container">
-    <div class="sp-img">
-      <!-- Person illustration -->
-      <svg viewBox="0 0 180 280" fill="none" xmlns="http://www.w3.org/2000/svg" width="180">
-        <!-- Body -->
-        <rect x="55" y="140" width="70" height="110" rx="20" fill="#42A5F5"/>
-        <!-- Head -->
-        <circle cx="90" cy="110" r="35" fill="#FFCC80"/>
-        <!-- Hair -->
-        <ellipse cx="90" cy="85" rx="32" ry="18" fill="#5D4037"/>
-        <!-- Arms -->
-        <rect x="20" y="145" width="35" height="14" rx="7" fill="#42A5F5" transform="rotate(-15 20 145)"/>
-        <rect x="125" y="145" width="35" height="14" rx="7" fill="#42A5F5" transform="rotate(15 125 145)"/>
-        <!-- Legs -->
-        <rect x="60" y="240" width="24" height="40" rx="12" fill="#1E88E5"/>
-        <rect x="96" y="240" width="24" height="40" rx="12" fill="#1E88E5"/>
-      </svg>
-    </div>
-    <div class="sp-content">
-      <span class="section-label">Истории клиентов</span>
-      <h2 class="section-title">Люди, которые заботятся о своём здоровье, выбирают Суставит</h2>
-      <p>За два года на рынке Суставит Эластика помог тысячам людей вернуть радость движения — спортсменам, пожилым клиентам и всем, кто ведёт активный образ жизни.</p>
-      <div class="sp-pills">
-        <div class="sp-pill">🏃 Спортсмены</div>
-        <div class="sp-pill">🧘 Йога-практики</div>
-        <div class="sp-pill">👴 50+ лет</div>
-        <div class="sp-pill">💼 Офисные работники</div>
-      </div>
-      <p style="font-size:14px; color: var(--text-mid); font-style: italic; border-left: 3px solid var(--blue); padding-left: 16px; margin-bottom: 24px;">"После 3 недель приёма я снова начала бегать по утрам. Боль в коленях практически исчезла." — Алина М., 42 года</p>
-      <a href="#order" class="btn">Присоединиться</a>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="comparison">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">Сравнение</span>
-      <h2 class="section-title">Суставит vs другие продукты</h2>
-      <p class="section-desc">Почему тысячи покупателей выбирают именно Суставит Эластика.</p>
-    </div>
-    <div class="comparison-table-wrap">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Параметр</th>
-            <th>Суставит Эластика</th>
-            <th>Обычный хондроитин</th>
-            <th>Другие комплексы</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="highlight">
-            <td>Комплексная формула</td>
-            <td><span class="tick">✓</span> 8 компонентов</td>
-            <td><span class="cross">✗</span> 1–2 компонента</td>
-            <td><span class="cross">✗</span> 3–4 компонента</td>
-          </tr>
-          <tr>
-            <td>Биодоступность</td>
-            <td><span class="tick">✓</span> BioMatrix™</td>
-            <td><span class="cross">✗</span> Стандартная</td>
-            <td><span class="cross">✗</span> Средняя</td>
-          </tr>
-          <tr class="highlight">
-            <td>Эффект через</td>
-            <td><span class="tick">✓</span> 2–3 недели</td>
-            <td>4–6 недель</td>
-            <td>3–5 недель</td>
-          </tr>
-          <tr>
-            <td>Вкус / форма</td>
-            <td><span class="tick">✓</span> Растворимый порошок</td>
-            <td>Капсулы</td>
-            <td>Таблетки/капсулы</td>
-          </tr>
-          <tr class="highlight">
-            <td>Клинические исследования</td>
-            <td><span class="tick">✓</span> Да</td>
-            <td><span class="cross">✗</span> Нет</td>
-            <td>Частично</td>
-          </tr>
-          <tr>
-            <td>Веганский состав</td>
-            <td><span class="tick">✓</span> Да</td>
-            <td><span class="cross">✗</span> Нет</td>
-            <td><span class="cross">✗</span> Нет</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="comparison-cta">
-      <a href="#order" class="btn">Выбрать Суставит</a>
-    </div>
-  </div>
-</section>
-
-<!-- UPSELL -->
-<section class="upsell">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">Линейка продуктов</span>
-      <h2 class="section-title">Полный комплекс для здоровья суставов</h2>
-    </div>
-    <div class="upsell-grid">
-      <div class="upsell-card">
-        <div class="upsell-product-img">
-          <svg viewBox="0 0 70 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="15" width="50" height="60" rx="12" fill="white" stroke="#BBDEFB" stroke-width="1.5"/>
-            <rect x="13" y="8" width="44" height="18" rx="8" fill="#1565C0"/>
-            <rect x="15" y="26" width="40" height="38" rx="6" fill="#E3F2FD"/>
-            <rect x="22" y="32" width="26" height="6" rx="3" fill="#1976D2"/>
-            <rect x="26" y="43" width="18" height="4" rx="2" fill="#90CAF9"/>
-            <circle cx="35" cy="58" r="6" fill="white" stroke="#BBDEFB"/>
-            <circle cx="35" cy="58" r="3" fill="#1976D2"/>
-          </svg>
-        </div>
-        <div>
-          <h3>Суставит Эластика PRO</h3>
-          <p>Усиленная формула для спортсменов и людей с повышенной нагрузкой на суставы.</p>
-          <div class="upsell-price">2 990 ₽ <span>4 200 ₽</span></div>
-          <a href="#order" class="btn">Заказать PRO</a>
-        </div>
-      </div>
-      <div class="upsell-card">
-        <div class="upsell-product-img">
-          <svg viewBox="0 0 70 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="15" width="50" height="60" rx="12" fill="white" stroke="#BBDEFB" stroke-width="1.5"/>
-            <rect x="13" y="8" width="44" height="18" rx="8" fill="#0D47A1"/>
-            <rect x="15" y="26" width="40" height="38" rx="6" fill="#E8F5E9"/>
-            <rect x="22" y="32" width="26" height="6" rx="3" fill="#0D47A1"/>
-            <rect x="26" y="43" width="18" height="4" rx="2" fill="#66BB6A"/>
-            <circle cx="35" cy="58" r="6" fill="white" stroke="#C8E6C9"/>
-            <circle cx="35" cy="58" r="3" fill="#43A047"/>
-          </svg>
-        </div>
-        <div>
-          <h3>Суставит Комфорт</h3>
-          <p>Мягкая формула для ежедневной поддержки суставов в профилактических целях.</p>
-          <div class="upsell-price">1 990 ₽ <span>2 800 ₽</span></div>
-          <a href="#order" class="btn btn-outline">Заказать Комфорт</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="container">
-    <div class="text-center">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title">Часто задаваемые вопросы</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          Как долго нужно принимать Суставит Эластика?
-          <span class="faq-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 4l4 4 4-4"/></svg></span>
-        </button>
-        <div class="faq-a">Рекомендуемый курс составляет 30–90 дней. Первые результаты заметны уже через 2–3 недели регулярного приёма. Для достижения стойкого эффекта рекомендуется повторять курс 2–3 раза в год.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          Есть ли противопоказания к приёму?
-          <span class="faq-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 4l4 4 4-4"/></svg></span>
-        </button>
-        <div class="faq-a">Препарат не рекомендуется при индивидуальной непереносимости компонентов, в период беременности и лактации. Перед применением рекомендуется проконсультироваться с врачом при наличии хронических заболеваний.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          Как правильно принимать препарат?
-          <span class="faq-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 4l4 4 4-4"/></svg></span>
-        </button>
-        <div class="faq-a">Растворите 1 мерную ложку (15 г) в 200 мл воды или сока. Принимайте 1 раз в день во время еды. Порошок быстро растворяется и имеет приятный нейтральный вкус.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          Подходит ли препарат для вегетарианцев?
-          <span class="faq-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 4l4 4 4-4"/></svg></span>
-        </button>
-        <div class="faq-a">Да, Суставит Эластика полностью подходит для веганского и вегетарианского питания. В составе нет продуктов животного происхождения — используются только растительные источники коллагена и коллагенстимулирующие комплексы.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          Возможна ли доставка по всей России?
-          <span class="faq-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 4l4 4 4-4"/></svg></span>
-        </button>
-        <div class="faq-a">Да, мы осуществляем доставку по всей России и странам СНГ. Срок доставки — 3–7 рабочих дней по России, 7–14 дней по СНГ. Доставка бесплатна при заказе от 3000 ₽.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ORDER -->
-<section class="order" id="order">
-  <div class="container">
-    <div class="order-product">
-      <svg class="order-product-img" viewBox="0 0 240 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="120" cy="245" rx="75" ry="11" fill="rgba(0,0,0,0.18)"/>
-        <rect x="45" y="52" width="150" height="175" rx="25" fill="white"/>
-        <rect x="50" y="33" width="140" height="46" rx="20" fill="#0D47A1"/>
-        <rect x="58" y="39" width="124" height="33" rx="15" fill="#1565C0"/>
-        <rect x="55" y="83" width="130" height="120" rx="8" fill="#E3F2FD"/>
-        <rect x="70" y="97" width="100" height="12" rx="6" fill="#1976D2"/>
-        <rect x="82" y="115" width="76" height="8" rx="4" fill="#42A5F5"/>
-        <circle cx="120" cy="158" r="26" fill="white" stroke="#BBDEFB" stroke-width="1.5"/>
-        <circle cx="120" cy="158" r="14" fill="#BBDEFB"/>
-        <circle cx="120" cy="154" r="5" fill="#1976D2"/>
-        <circle cx="128" cy="163" r="4" fill="#1976D2"/>
-        <circle cx="112" cy="163" r="4" fill="#1976D2"/>
-        <line x1="120" y1="154" x2="128" y2="163" stroke="#1565C0" stroke-width="2"/>
-        <line x1="120" y1="154" x2="112" y2="163" stroke="#1565C0" stroke-width="2"/>
-        <rect x="90" y="193" width="60" height="5" rx="2.5" fill="#90CAF9"/>
-      </svg>
-    </div>
-    <div class="order-form-wrap">
-      <h2>Оформить заказ</h2>
-      <p>Получите Суставит Эластика с доставкой за 3–5 дней. Бесплатная доставка от 3000 ₽.</p>
-      <div class="order-form">
-        <input type="text" placeholder="Ваше имя"/>
-        <input type="tel" placeholder="Номер телефона"/>
-        <input type="email" placeholder="Электронная почта"/>
-        <select>
-          <option value="" disabled selected>Выберите продукт</option>
-          <option>Суставит Эластика — 1 990 ₽</option>
-          <option>Суставит Эластика PRO — 2 990 ₽</option>
-          <option>Суставит Комфорт — 1 490 ₽</option>
-          <option>Набор из 3 упаковок — 4 990 ₽</option>
-        </select>
-        <button class="order-submit">Оформить заказ →</button>
-        <p class="order-privacy">Нажимая кнопку, вы соглашаетесь с Политикой конфиденциальности. Данные защищены.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">F+F</div>
-        <p>Инновационные продукты для здоровья суставов и активного долголетия. Производство по стандартам GMP.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Продукты</h5>
-        <ul>
-          <li><a href="#">Суставит Эластика</a></li>
-          <li><a href="#">Суставит PRO</a></li>
-          <li><a href="#">Суставит Комфорт</a></li>
-          <li><a href="#">Наборы</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Суставит — Свобода движения</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <a href="#" class="nav-logo">
+          <img src="img/logo_white.png" alt="Логотип F+F"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="#about">О продукте</a></li>
+          <li><a href="#ingredients">Состав</a></li>
+          <li><a href="#social-proof">Для кого</a></li>
+          <li><a href="#order">Цена</a></li>
+          <li><a href="#faq">Вопросы</a></li>
         </ul>
+        <div class="nav-actions">
+          <a class="nav-btn" href="#order">Оставить заявку</a>
+          <a class="nav-arrow" href="#order" aria-label="Оставить заявку">↗</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <div class="footer-col">
-        <h5>Компания</h5>
-        <ul>
-          <li><a href="#">О нас</a></li>
-          <li><a href="#">Сертификаты</a></li>
-          <li><a href="#">Исследования</a></li>
-          <li><a href="#">Партнёрам</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Поддержка</h5>
-        <ul>
-          <li><a href="#">Контакты</a></li>
-          <li><a href="#">Доставка и оплата</a></li>
-          <li><a href="#">Возврат</a></li>
-          <li><a href="#">Политика конфиденциальности</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2024 F+F. Все права защищены. БАД. Не является лекарственным средством.</p>
-      <div class="footer-socials">
-        <a href="#" class="social-link" aria-label="ВКонтакте">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.5h-1.48c-.56 0-.73-.44-1.73-1.46-.87-.84-1.25-.95-1.47-.95-.3 0-.38.08-.38.5v1.33c0 .35-.11.56-1.04.56-1.53 0-3.23-.93-4.42-2.67-1.8-2.52-2.29-4.41-2.29-4.8 0-.22.08-.43.5-.43h1.48c.37 0 .51.17.65.57.72 2.07 1.92 3.88 2.42 3.88.18 0 .27-.08.27-.54V9.77c-.06-1-.57-1.08-.57-1.44 0-.17.14-.35.36-.35h2.33c.31 0 .42.17.42.54v2.89c0 .31.14.42.22.42.18 0 .34-.11.68-.45 1.05-1.18 1.8-3 1.8-3 .1-.22.29-.43.65-.43h1.48c.44 0 .54.23.44.54-.19.87-2.01 3.44-2.01 3.44-.16.26-.22.37 0 .66.16.22.68.67 1.03 1.08.64.73 1.12 1.34 1.25 1.76.14.42-.09.63-.51.63z"/></svg>
-        </a>
-        <a href="#" class="social-link" aria-label="Telegram">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.93.43l-2.58-1.9-1.25 1.2c-.14.13-.26.25-.52.25l.18-2.62 4.73-4.27c.21-.18-.04-.28-.31-.1l-5.84 3.68-2.52-.78c-.55-.17-.56-.55.11-.82l9.83-3.79c.46-.17.86.11.78.8z"/></svg>
-        </a>
-        <a href="#" class="social-link" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.25-.6-.5-.52-.68-.53-.18-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.22 1.37.19 1.88.11.57-.08 1.76-.72 2.01-1.42.25-.69.25-1.28.18-1.41-.07-.12-.27-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.86.5 3.6 1.36 5.11L2 22l4.96-1.3C8.44 21.53 10.18 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15c-1.69 0-3.26-.5-4.57-1.36l-.33-.2-3.37.88.9-3.28-.21-.34A8.09 8.09 0 013.85 12c0-4.49 3.65-8.15 8.15-8.15S20.15 7.51 20.15 12 16.49 20.15 12 20.15z"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </nav>
 
-<script>
-function toggleFaq(btn) {
-  const answer = btn.nextElementSibling;
-  const isOpen = btn.getAttribute('aria-expanded') === 'true';
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.setAttribute('aria-expanded', 'false');
-    q.nextElementSibling.classList.remove('open');
-  });
-  if (!isOpen) {
-    btn.setAttribute('aria-expanded', 'true');
-    answer.classList.add('open');
-  }
-}
-</script>
-</body>
+    <header class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Свобода<br />движения</h1>
+          <div class="hero-line"></div>
+          <p class="hero-sub">
+            «Complex SW СУСТАВЫ» порошок<br />для опорно-двигательного аппарата
+          </p>
+          <a href="#order" class="hero-cta"
+            >Купить в 1 клик <span aria-hidden="true">↗</span></a
+          >
+        </div>
+
+        <div class="hero-product-zone">
+          <div class="hero-bubble bubble-one"></div>
+          <div class="hero-bubble bubble-two"></div>
+          <div class="hero-bubble bubble-three"></div>
+          <img
+            class="hero-product"
+            src="img/pic1.png"
+            alt="Упаковка Суставит"
+          />
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-line"></div>
+          <p><strong>420г. / 30 порций</strong><br />Месячный курс</p>
+        </div>
+
+        <div class="hero-bottom-text">
+          <h2>1 порция = 17 обычных капсул</h2>
+          <p>
+            Комплекс, который питает суставы изнутри<br />и способствует
+            обновлению хрящевой ткани
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="about" id="about">
+        <div class="container split">
+          <div class="about-img-wrap">
+            <div class="about-img">
+              <img src="img/joint.svg" alt="Иллюстрация сустава" />
+            </div>
+            <div class="about-badge-float">
+              <div class="icon-circle">✓</div>
+              <div>
+                <strong>Клинически проверен</strong>
+                <span>Сертификат качества</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-content">
+            <span class="section-label">О продукте</span>
+            <h2 class="section-title">
+              Комплекс для тех, кто хочет свободно двигаться и заботиться о
+              своих суставах каждый день.
+            </h2>
+            <p>
+              Суставит Эластика — это научно обоснованная формула, которая
+              объединяет ключевые нутриенты для поддержания здоровья суставов,
+              связок и хрящевой ткани.
+            </p>
+            <ul class="about-checks">
+              <li>Натуральный состав без синтетических добавок</li>
+              <li>Результат уже с первых 2–3 недель приёма</li>
+              <li>Подходит для людей всех возрастов и уровней активности</li>
+              <li>Одобрен диетологами и спортивными врачами</li>
+            </ul>
+            <a href="#order" class="btn">Узнать больше</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="problems">
+        <div class="container">
+          <div class="text-center">
+            <span class="section-label">Почему это важно</span>
+            <h2 class="section-title">Что происходит с суставами без заботы</h2>
+            <p class="section-desc">
+              Ежедневная нагрузка, малоподвижный образ жизни и нехватка
+              питательных веществ постепенно разрушают хрящевую ткань.
+            </p>
+          </div>
+          <div class="problems-grid">
+            <article class="problem-card">
+              <div class="problem-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1976D2"
+                  stroke-width="2"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M12 8v4l3 3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>Боль и скованность</h3>
+              <p>
+                Хроническая боль в суставах, особенно по утрам, сигнализирует о
+                начале разрушения хрящевой ткани.
+              </p>
+            </article>
+            <article class="problem-card">
+              <div class="problem-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1976D2"
+                  stroke-width="2"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>Воспаление</h3>
+              <p>
+                Регулярные воспалительные процессы разрушают синовиальную
+                жидкость и приводят к деградации сустава.
+              </p>
+            </article>
+            <article class="problem-card">
+              <div class="problem-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1976D2"
+                  stroke-width="2"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 12s1.5-3 4-3 4 3 4 3" stroke-linecap="round" />
+                  <line
+                    x1="9"
+                    y1="15"
+                    x2="9.01"
+                    y2="15"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  />
+                  <line
+                    x1="15"
+                    y1="15"
+                    x2="15.01"
+                    y2="15"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  />
+                </svg>
+              </div>
+              <h3>Снижение подвижности</h3>
+              <p>
+                Ограниченная амплитуда движения мешает полноценной жизни, спорту
+                и даже бытовым занятиям.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="how" id="how">
+        <div class="container">
+          <div class="text-center">
+            <span class="section-label">Механизм действия</span>
+            <h2 class="section-title">Как работает Суставит Эластика</h2>
+            <p class="section-desc">
+              Четыре последовательных этапа для комплексного восстановления и
+              защиты суставов.
+            </p>
+          </div>
+          <div class="flow">
+            <article class="flow-step">
+              <span>Шаг 1</span>
+              <h4>Питание хряща</h4>
+              <p>Глюкозамин и хондроитин проникают в хрящевую ткань</p>
+            </article>
+            <div class="flow-arrow">→</div>
+            <article class="flow-step light">
+              <span>Шаг 2</span>
+              <h4>Снижение воспаления</h4>
+              <p>Омега-3 и куркумин блокируют воспалительные медиаторы</p>
+            </article>
+            <div class="flow-arrow">→</div>
+            <article class="flow-step">
+              <span>Шаг 3</span>
+              <h4>Восстановление</h4>
+              <p>Коллаген II типа стимулирует регенерацию тканей сустава</p>
+            </article>
+            <div class="flow-arrow">→</div>
+            <article class="flow-step light">
+              <span>Шаг 4</span>
+              <h4>Защита и гибкость</h4>
+              <p>Гиалуроновая кислота восстанавливает синовиальную жидкость</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ingredients" id="ingredients">
+        <div class="container">
+          <div class="text-center">
+            <span class="section-label">Состав</span>
+            <h2 class="section-title">Ключевые компоненты</h2>
+            <p class="section-desc">
+              Каждый ингредиент подобран с научной точностью и работает в
+              синергии с остальными.
+            </p>
+          </div>
+          <div class="ingredients-grid">
+            <article class="ingredient-card">
+              <div class="ingredient-img">
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="24" cy="24" r="16" fill="#BBDEFB" />
+                  <circle cx="24" cy="20" r="6" fill="#1976D2" />
+                  <circle cx="32" cy="30" r="5" fill="#1976D2" />
+                  <circle cx="16" cy="30" r="5" fill="#1976D2" />
+                  <line
+                    x1="24"
+                    y1="20"
+                    x2="32"
+                    y2="30"
+                    stroke="#1565C0"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="24"
+                    y1="20"
+                    x2="16"
+                    y2="30"
+                    stroke="#1565C0"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <h4>Глюкозамин</h4>
+              <p>
+                Строительный блок хряща. Стимулирует выработку коллагена и
+                гиалуроновой кислоты.
+              </p>
+            </article>
+            <article class="ingredient-card">
+              <div class="ingredient-img">
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="24" cy="24" r="16" fill="#BBDEFB" />
+                  <ellipse cx="24" cy="24" rx="12" ry="8" fill="#42A5F5" />
+                  <ellipse
+                    cx="24"
+                    cy="24"
+                    rx="6"
+                    ry="12"
+                    fill="#1976D2"
+                    opacity=".7"
+                  />
+                  <circle cx="24" cy="24" r="3" fill="white" />
+                </svg>
+              </div>
+              <h4>Хондроитин</h4>
+              <p>
+                Удерживает влагу в хряще, защищает от разрушения и повышает
+                амортизацию сустава.
+              </p>
+            </article>
+            <article class="ingredient-card">
+              <div class="ingredient-img">
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="24" cy="24" r="16" fill="#E1F5FE" />
+                  <path
+                    d="M16 24 Q24 12 32 24 Q24 36 16 24Z"
+                    fill="#1976D2"
+                    opacity=".5"
+                  />
+                  <path
+                    d="M16 24 Q24 16 32 24"
+                    stroke="#1565C0"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="24" cy="24" r="4" fill="#1565C0" />
+                </svg>
+              </div>
+              <h4>Коллаген II типа</h4>
+              <p>
+                Нативный коллаген для восстановления структуры хрящевой ткани и
+                связок суставов.
+              </p>
+            </article>
+            <article class="ingredient-card">
+              <div class="ingredient-img">
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="24" cy="24" r="16" fill="#E3F2FD" />
+                  <circle cx="24" cy="24" r="10" fill="#90CAF9" />
+                  <circle cx="24" cy="24" r="5" fill="#1976D2" />
+                  <circle cx="17" cy="18" r="3" fill="#42A5F5" />
+                  <circle cx="31" cy="18" r="3" fill="#42A5F5" />
+                </svg>
+              </div>
+              <h4>Гиалуроновая кислота</h4>
+              <p>
+                Восстанавливает синовиальную жидкость, обеспечивая смазку и
+                плавность движений.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="container split">
+          <div class="showcase-img">
+            <img
+              class="showcase-product"
+              src="img/product.svg"
+              alt="Банка Суставит Эластика"
+            />
+            <div class="showcase-badge">Суставит Эластика</div>
+          </div>
+          <div class="showcase-content">
+            <span class="section-label">Формула</span>
+            <h2 class="section-title">
+              Питает. Восстанавливает. Снижает воспаление. Улучшает подвижность.
+            </h2>
+            <p>
+              Комплексный препарат нового поколения на основе 8 клинически
+              изученных компонентов. Без ГМО, без искусственных красителей.
+            </p>
+            <div class="showcase-tags">
+              <span>✓ Без ГМО</span>
+              <span>✓ Веганский состав</span>
+              <span>✓ ISO сертификат</span>
+              <span>✓ 30 порций</span>
+            </div>
+            <a href="#order" class="btn">Заказать Суставит Эластика</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-section">
+        <div class="container split">
+          <div class="quote-img">
+            <img src="img/scoop.svg" alt="Мерная ложка с порошком" />
+          </div>
+          <div class="quote-content">
+            <blockquote>
+              «Суставит Эластика» — система комплексного восстановления суставов
+            </blockquote>
+            <p>
+              Единственный препарат с запатентованной технологией BioMatrix™,
+              которая обеспечивает максимальное усвоение активных компонентов в
+              хрящевой ткани.
+            </p>
+            <a href="#order" class="btn btn-white">Попробовать сейчас</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-proof" id="social-proof">
+        <div class="container split">
+          <div class="sp-img">
+            <img src="img/person.svg" alt="Активный покупатель" />
+          </div>
+          <div class="sp-content">
+            <span class="section-label">Истории клиентов</span>
+            <h2 class="section-title">
+              Люди, которые заботятся о своём здоровье, выбирают Суставит
+            </h2>
+            <p>
+              За два года на рынке Суставит Эластика помог тысячам людей вернуть
+              радость движения — спортсменам, пожилым клиентам и всем, кто ведёт
+              активный образ жизни.
+            </p>
+            <div class="sp-pills">
+              <span>Спортсмены</span>
+              <span>Йога-практики</span>
+              <span>50+ лет</span>
+              <span>Офисные работники</span>
+            </div>
+            <p class="testimonial">
+              "После 3 недель приёма я снова начала бегать по утрам. Боль в
+              коленях практически исчезла." — Алина М., 42 года
+            </p>
+            <a href="#order" class="btn">Присоединиться</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="comparison">
+        <div class="container">
+          <div class="text-center">
+            <span class="section-label">Сравнение</span>
+            <h2 class="section-title">Суставит vs другие продукты</h2>
+            <p class="section-desc">
+              Почему тысячи покупателей выбирают именно Суставит Эластика.
+            </p>
+          </div>
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Параметр</th>
+                  <th>Суставит Эластика</th>
+                  <th>Обычный хондроитин</th>
+                  <th>Другие комплексы</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Комплексная формула</td>
+                  <td><b>✓</b> 8 компонентов</td>
+                  <td>✗ 1–2 компонента</td>
+                  <td>✗ 3–4 компонента</td>
+                </tr>
+                <tr>
+                  <td>Биодоступность</td>
+                  <td><b>✓</b> BioMatrix™</td>
+                  <td>✗ Стандартная</td>
+                  <td>✗ Средняя</td>
+                </tr>
+                <tr>
+                  <td>Эффект через</td>
+                  <td><b>✓</b> 2–3 недели</td>
+                  <td>4–6 недель</td>
+                  <td>3–5 недель</td>
+                </tr>
+                <tr>
+                  <td>Вкус / форма</td>
+                  <td><b>✓</b> Растворимый порошок</td>
+                  <td>Капсулы</td>
+                  <td>Таблетки/капсулы</td>
+                </tr>
+                <tr>
+                  <td>Клинические исследования</td>
+                  <td><b>✓</b> Да</td>
+                  <td>✗ Нет</td>
+                  <td>Частично</td>
+                </tr>
+                <tr>
+                  <td>Веганский состав</td>
+                  <td><b>✓</b> Да</td>
+                  <td>✗ Нет</td>
+                  <td>✗ Нет</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="comparison-cta">
+            <a href="#order" class="btn">Выбрать Суставит</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="upsell">
+        <div class="container">
+          <div class="text-center">
+            <span class="section-label">Линейка продуктов</span>
+            <h2 class="section-title">Полный комплекс для здоровья суставов</h2>
+          </div>
+          <div class="upsell-grid">
+            <article class="upsell-card">
+              <img src="img/product-pro.svg" alt="Суставит Эластика PRO" />
+              <div>
+                <h3>Суставит Эластика PRO</h3>
+                <p>
+                  Усиленная формула для спортсменов и людей с повышенной
+                  нагрузкой на суставы.
+                </p>
+                <div class="upsell-price">2 990 ₽ <span>4 200 ₽</span></div>
+                <a href="#order" class="btn">Заказать PRO</a>
+              </div>
+            </article>
+            <article class="upsell-card">
+              <img src="img/product-comfort.svg" alt="Суставит Комфорт" />
+              <div>
+                <h3>Суставит Комфорт</h3>
+                <p>
+                  Мягкая формула для ежедневной поддержки суставов в
+                  профилактических целях.
+                </p>
+                <div class="upsell-price">1 990 ₽ <span>2 800 ₽</span></div>
+                <a href="#order" class="btn btn-outline">Заказать Комфорт</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <div class="container">
+          <div class="text-center">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-q" type="button" aria-expanded="false">
+                Как долго нужно принимать Суставит Эластика?<span>⌄</span>
+              </button>
+              <div class="faq-a">
+                Рекомендуемый курс составляет 30–90 дней. Первые результаты
+                заметны уже через 2–3 недели регулярного приёма.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" type="button" aria-expanded="false">
+                Есть ли противопоказания к приёму?<span>⌄</span>
+              </button>
+              <div class="faq-a">
+                Препарат не рекомендуется при индивидуальной непереносимости
+                компонентов, в период беременности и лактации.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" type="button" aria-expanded="false">
+                Как правильно принимать препарат?<span>⌄</span>
+              </button>
+              <div class="faq-a">
+                Растворите 1 мерную ложку в 200 мл воды или сока. Принимайте 1
+                раз в день во время еды.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" type="button" aria-expanded="false">
+                Подходит ли препарат для вегетарианцев?<span>⌄</span>
+              </button>
+              <div class="faq-a">
+                Да, Суставит Эластика подходит для веганского и вегетарианского
+                питания.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" type="button" aria-expanded="false">
+                Возможна ли доставка по всей России?<span>⌄</span>
+              </button>
+              <div class="faq-a">
+                Да, доставка доступна по всей России и странам СНГ. Срок
+                доставки по России — 3–7 рабочих дней.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="order" id="order">
+        <div class="container split">
+          <div class="order-product">
+            <img
+              class="order-product-img"
+              src="img/product.svg"
+              alt="Суставит Эластика"
+            />
+          </div>
+          <div class="order-form-wrap">
+            <h2>Оформить заказ</h2>
+            <p>
+              Получите Суставит Эластика с доставкой за 3–5 дней. Бесплатная
+              доставка от 3000 ₽.
+            </p>
+            <form class="order-form">
+              <input type="text" placeholder="Ваше имя" aria-label="Ваше имя" />
+              <input
+                type="tel"
+                placeholder="Номер телефона"
+                aria-label="Номер телефона"
+              />
+              <input
+                type="email"
+                placeholder="Электронная почта"
+                aria-label="Электронная почта"
+              />
+              <select aria-label="Выберите продукт">
+                <option value="" disabled selected>Выберите продукт</option>
+                <option>Суставит Эластика — 1 990 ₽</option>
+                <option>Суставит Эластика PRO — 2 990 ₽</option>
+                <option>Суставит Комфорт — 1 490 ₽</option>
+                <option>Набор из 3 упаковок — 4 990 ₽</option>
+              </select>
+              <button class="order-submit" type="submit">
+                Оформить заказ →
+              </button>
+              <p class="order-privacy">
+                Нажимая кнопку, вы соглашаетесь с Политикой конфиденциальности.
+                Данные защищены.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">F+F</div>
+            <p>
+              Инновационные продукты для здоровья суставов и активного
+              долголетия. Производство по стандартам GMP.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h5>Продукты</h5>
+            <a href="#">Суставит Эластика</a><a href="#">Суставит PRO</a
+            ><a href="#">Суставит Комфорт</a><a href="#">Наборы</a>
+          </div>
+          <div class="footer-col">
+            <h5>Компания</h5>
+            <a href="#">О нас</a><a href="#">Сертификаты</a
+            ><a href="#">Исследования</a><a href="#">Партнёрам</a>
+          </div>
+          <div class="footer-col">
+            <h5>Поддержка</h5>
+            <a href="#">Контакты</a><a href="#">Доставка и оплата</a
+            ><a href="#">Возврат</a><a href="#">Политика конфиденциальности</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © 2024 F+F. Все права защищены. БАД. Не является лекарственным
+            средством.
+          </p>
+          <div class="footer-socials">
+            <a href="#" aria-label="ВКонтакте">VK</a>
+            <a href="#" aria-label="Telegram">TG</a>
+            <a href="#" aria-label="WhatsApp">WA</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".faq-q").forEach((button) => {
+        button.addEventListener("click", () => {
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+          document.querySelectorAll(".faq-q").forEach((item) => {
+            item.setAttribute("aria-expanded", "false");
+            item.nextElementSibling.classList.remove("open");
+          });
+          if (!isOpen) {
+            button.setAttribute("aria-expanded", "true");
+            button.nextElementSibling.classList.add("open");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
