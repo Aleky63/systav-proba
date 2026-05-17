@@ -16,7 +16,7 @@
     <nav class="nav">
       <div class="container">
         <a href="#" class="nav-logo">
-          <img src="img/logo_white.png" alt="Логотип F+F"
+          <img src="img/logo_white.png" alt="Логотип FMF"
         /></a>
         <ul class="nav-links">
           <li><a href="#about">О продукте</a></li>
@@ -43,9 +43,12 @@
           <p class="hero-sub">
             «Complex SW СУСТАВЫ» порошок<br />для опорно-двигательного аппарата
           </p>
-          <a href="#order" class="hero-cta"
-            >Купить в 1 клик <span aria-hidden="true">↗</span></a
-          >
+          <div class="hero-actions">
+            <a class="nav-btn" href="#order">Купить в 1 клик</a>
+            <a class="nav-arrow" href="#order" aria-label="Купить в 1 клик"
+              >↗</a
+            >
+          </div>
         </div>
 
         <div class="hero-product-zone">
@@ -54,7 +57,7 @@
           <div class="hero-bubble bubble-three"></div>
           <img
             class="hero-product"
-            src="img/pic1.png"
+            src="img/box1.png"
             alt="Упаковка Суставит"
           />
         </div>
@@ -516,189 +519,300 @@
         </div>
       </section>
 
-      <section class="upsell">
+      <!-- Обновлённая секция Upsell -->
+      <section class="upsell" id="upsell">
         <div class="container">
-          <div class="text-center">
-            <span class="section-label">Линейка продуктов</span>
-            <h2 class="section-title">Полный комплекс для здоровья суставов</h2>
-          </div>
           <div class="upsell-grid">
-            <article class="upsell-card">
-              <img src="img/product-pro.svg" alt="Суставит Эластика PRO" />
-              <div>
-                <h3>Суставит Эластика PRO</h3>
-                <p>
-                  Усиленная формула для спортсменов и людей с повышенной
-                  нагрузкой на суставы.
-                </p>
-                <div class="upsell-price">2 990 ₽ <span>4 200 ₽</span></div>
-                <a href="#order" class="btn">Заказать PRO</a>
+            <div class="upsell-card blue">
+              <div class="upsell-header">
+                <h3>«Complex SW СУСТАВЫ»</h3>
+                <p>для опорно-двигательного аппарата</p>
               </div>
-            </article>
-            <article class="upsell-card">
-              <img src="img/product-comfort.svg" alt="Суставит Комфорт" />
-              <div>
-                <h3>Суставит Комфорт</h3>
-                <p>
-                  Мягкая формула для ежедневной поддержки суставов в
-                  профилактических целях.
-                </p>
-                <div class="upsell-price">1 990 ₽ <span>2 800 ₽</span></div>
-                <a href="#order" class="btn btn-outline">Заказать Комфорт</a>
+              <div class="upsell-product">
+                <img src="img/box2.png" alt="Complex SW СУСТАВЫ" />
               </div>
-            </article>
+              <div class="upsell-price-block">
+                <div class="price">3 900 ₽</div>
+                <div class="price-details">420г / 30 порций</div>
+              </div>
+              <div class="upsell-actions">
+                <a href="#order" class="btn-buy">Купить в 1 клик</a>
+                <a
+                  href="#order"
+                  class="btn-buy-arrow"
+                  aria-label="Купить в 1 клик"
+                  >↗</a
+                >
+              </div>
+            </div>
+
+            <div class="upsell-card white">
+              <div class="instruction-header">
+                <h3>Инструкция и рекомендации<br />по применению</h3>
+              </div>
+              <div class="instruction-visual">
+                <img
+                  src="img/box3.png"
+                  alt="Complex SW СУСТАВЫ"
+                  class="instr-product"
+                />
+              </div>
+              <div class="instruction-steps">
+                <div class="step">1 ложка в день</div>
+                <div class="step">Растворить в 200 мл воды</div>
+                <div class="step">Принимать утром</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Обновлённая секция FAQ -->
       <section class="faq" id="faq">
         <div class="container">
-          <div class="text-center">
-            <span class="section-label">FAQ</span>
-            <h2 class="section-title">Часто задаваемые вопросы</h2>
-          </div>
           <div class="faq-list">
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false">
-                Как долго нужно принимать Суставит Эластика?<span>⌄</span>
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span
+                  >Можно ли «Complex SW СУСТАВЫ» принимать с другими
+                  препаратами</span
+                >
+                <svg
+                  class="faq-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M10 4V16M4 10H16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
               </button>
-              <div class="faq-a">
-                Рекомендуемый курс составляет 30–90 дней. Первые результаты
-                заметны уже через 2–3 недели регулярного приёма.
+              <div class="faq-answer">
+                <p>
+                  Да, комплекс можно принимать вместе с другими препаратами.
+                  Однако рекомендуется проконсультироваться с врачом для
+                  оптимального сочетания.
+                </p>
               </div>
             </div>
+
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false">
-                Есть ли противопоказания к приёму?<span>⌄</span>
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span>Какие противопоказания?</span>
+                <svg
+                  class="faq-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M10 4V16M4 10H16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
               </button>
-              <div class="faq-a">
-                Препарат не рекомендуется при индивидуальной непереносимости
-                компонентов, в период беременности и лактации.
+              <div class="faq-answer">
+                <p>
+                  Противопоказанием является индивидуальная непереносимость
+                  компонентов препарата. Не рекомендуется при беременности и в
+                  период лактации.
+                </p>
               </div>
             </div>
+
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false">
-                Как правильно принимать препарат?<span>⌄</span>
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span>Почему в форме порошка, а не капсул?</span>
+                <svg
+                  class="faq-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M10 4V16M4 10H16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
               </button>
-              <div class="faq-a">
-                Растворите 1 мерную ложку в 200 мл воды или сока. Принимайте 1
-                раз в день во время еды.
+              <div class="faq-answer">
+                <p>
+                  Порошковая форма обеспечивает лучшую усвояемость и быстрое
+                  действие. Одна порция порошка эквивалентна 17 обычным
+                  капсулам, что удобнее для приёма.
+                </p>
               </div>
             </div>
+
             <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false">
-                Подходит ли препарат для вегетарианцев?<span>⌄</span>
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span>Какие показания для приема комплекса</span>
+                <svg
+                  class="faq-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M10 4V16M4 10H16"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
               </button>
-              <div class="faq-a">
-                Да, Суставит Эластика подходит для веганского и вегетарианского
-                питания.
-              </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-q" type="button" aria-expanded="false">
-                Возможна ли доставка по всей России?<span>⌄</span>
-              </button>
-              <div class="faq-a">
-                Да, доставка доступна по всей России и странам СНГ. Срок
-                доставки по России — 3–7 рабочих дней.
+              <div class="faq-answer">
+                <p>
+                  Комплекс рекомендуется при болях в суставах, скованности
+                  движений, после травм, при повышенных физических нагрузках, а
+                  также для профилактики возрастных изменений.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Обновлённая секция Order -->
       <section class="order" id="order">
-        <div class="container split">
-          <div class="order-product">
-            <img
-              class="order-product-img"
-              src="img/product.svg"
-              alt="Суставит Эластика"
-            />
+        <div class="container">
+          <div class="order-header">
+            <h2>Остались вопросы? Напишите нам</h2>
           </div>
-          <div class="order-form-wrap">
-            <h2>Оформить заказ</h2>
-            <p>
-              Получите Суставит Эластика с доставкой за 3–5 дней. Бесплатная
-              доставка от 3000 ₽.
-            </p>
-            <form class="order-form">
-              <input type="text" placeholder="Ваше имя" aria-label="Ваше имя" />
-              <input
-                type="tel"
-                placeholder="Номер телефона"
-                aria-label="Номер телефона"
-              />
-              <input
-                type="email"
-                placeholder="Электронная почта"
-                aria-label="Электронная почта"
-              />
-              <select aria-label="Выберите продукт">
-                <option value="" disabled selected>Выберите продукт</option>
-                <option>Суставит Эластика — 1 990 ₽</option>
-                <option>Суставит Эластика PRO — 2 990 ₽</option>
-                <option>Суставит Комфорт — 1 490 ₽</option>
-                <option>Набор из 3 упаковок — 4 990 ₽</option>
-              </select>
-              <button class="order-submit" type="submit">
-                Оформить заказ →
-              </button>
-              <p class="order-privacy">
-                Нажимая кнопку, вы соглашаетесь с Политикой конфиденциальности.
-                Данные защищены.
-              </p>
-            </form>
+          <div class="order-grid">
+            <div class="order-contact">
+              <div class="order-label">Эл. почта</div>
+              <a href="mailto:info@test.ru" class="order-email">info@test.ru</a>
+
+              <div class="order-messengers">
+                <div class="messengers-label">Мессенджеры</div>
+                <div class="messengers-icons">
+                  <a
+                    href="#"
+                    class="messenger-icon telegram"
+                    aria-label="Telegram"
+                  >
+                    <img src="img/telegram.svg" alt="Telegram" />
+                  </a>
+                  <a href="#" class="messenger-icon phone" aria-label="Телефон">
+                    <img src="img/phone.svg" alt="Телефон" />
+                  </a>
+                  <a
+                    href="#"
+                    class="messenger-icon whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <img src="img/whatsapp.svg" alt="WhatsApp" />
+                  </a>
+                  <a href="#" class="messenger-icon vk" aria-label="VK">
+                    <img src="img/vk.svg" alt="VK" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-form">
+              <form class="form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Имя</label>
+                    <input type="text" placeholder="Как к вам обращаться" />
+                  </div>
+                  <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" />
+                  </div>
+                  <div class="form-group">
+                    <label>Эл. почта</label>
+                    <input type="email" placeholder="Ваша почта" />
+                  </div>
+                </div>
+                <div class="form-consent">
+                  <input type="checkbox" id="consent" checked />
+                  <label for="consent"
+                    >Я даю свое согласие на обработку персональных данных</label
+                  >
+                </div>
+                <button type="submit" class="btn-submit">
+                  Оставить заявку
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M3 8H13M13 8L9 4M13 8L9 12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
+    <!-- Обновлённый footer -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <div class="footer-logo">F+F</div>
-            <p>
-              Инновационные продукты для здоровья суставов и активного
-              долголетия. Производство по стандартам GMP.
+        <div class="footer-logo">
+          <svg width="120" height="40" viewBox="0 0 120 40" fill="none">
+            <text
+              x="50%"
+              y="50%"
+              dominant-baseline="middle"
+              text-anchor="middle"
+              font-family="Onest, sans-serif"
+              font-weight="800"
+              font-size="32"
+              fill="#1a2233"
+            >
+              <a href="#" class="nav-logo">
+                <img src="img/logo_dark.png" alt="Логотип FMF" />
+              </a>
+            </text>
+          </svg>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-left">
+            <p>© 2026, Описалл</p>
+            <p>Все права защищены</p>
+          </div>
+
+          <div class="footer-center">
+            <p class="disclaimer">
+              БАД, не является лекарственным средством. Требуется консультация
+              специалиста.
             </p>
           </div>
-          <div class="footer-col">
-            <h5>Продукты</h5>
-            <a href="#">Суставит Эластика</a><a href="#">Суставит PRO</a
-            ><a href="#">Суставит Комфорт</a><a href="#">Наборы</a>
-          </div>
-          <div class="footer-col">
-            <h5>Компания</h5>
-            <a href="#">О нас</a><a href="#">Сертификаты</a
-            ><a href="#">Исследования</a><a href="#">Партнёрам</a>
-          </div>
-          <div class="footer-col">
-            <h5>Поддержка</h5>
-            <a href="#">Контакты</a><a href="#">Доставка и оплата</a
-            ><a href="#">Возврат</a><a href="#">Политика конфиденциальности</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>
-            © 2024 F+F. Все права защищены. БАД. Не является лекарственным
-            средством.
-          </p>
-          <div class="footer-socials">
-            <a href="#" aria-label="ВКонтакте">VK</a>
-            <a href="#" aria-label="Telegram">TG</a>
-            <a href="#" aria-label="WhatsApp">WA</a>
+
+          <div class="footer-right">
+            <a href="#">Оферта</a>
+            <a href="#">Политика конфиденциальности</a>
           </div>
         </div>
       </div>
     </footer>
 
     <script>
-      document.querySelectorAll(".faq-q").forEach((button) => {
+      // FAQ Accordion
+      document.querySelectorAll(".faq-question").forEach((button) => {
         button.addEventListener("click", () => {
           const isOpen = button.getAttribute("aria-expanded") === "true";
-          document.querySelectorAll(".faq-q").forEach((item) => {
+          document.querySelectorAll(".faq-question").forEach((item) => {
             item.setAttribute("aria-expanded", "false");
             item.nextElementSibling.classList.remove("open");
           });
