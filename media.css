@@ -1,0 +1,224 @@
+/* =========================================
+   Адаптивность
+   ========================================= */
+
+/* Tablet (1024px) */
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 60px;
+  }
+  .hero-product-zone {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .hero-copy {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 120px;
+  }
+  .hero-side {
+    display: none;
+  }
+  .hero-bottom-text {
+    grid-column: 1 / -1;
+  }
+  .split,
+  .features-grid,
+  .products-grid,
+  .order-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .age-tabs {
+    flex-wrap: wrap;
+  }
+  .footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+/* Mobile (768px) */
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    text-align: center;
+  }
+  .hero-product-zone {
+    margin: 40px 0;
+  }
+  .hero-product {
+    max-width: 280px;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-bottom-text h2 {
+    font-size: 24px;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .age-tabs {
+    flex-direction: column;
+  }
+  .age-tab {
+    text-align: left;
+  }
+  .components-grid {
+    grid-template-columns: 1fr;
+  }
+  .components-visual img {
+    max-width: 200px;
+  }
+  .order-contact,
+  .order-form {
+    padding: 30px 20px;
+  }
+  .order-email {
+    font-size: 20px;
+  }
+  .order-grid {
+    gap: 30px;
+  }
+  .features-visual img {
+    width: 240px;
+  }
+  .product-card {
+    padding: 30px 20px;
+  }
+  .product-card img {
+    width: 160px;
+  }
+  .messengers-icons {
+    justify-content: center;
+  }
+  .order-contact {
+    text-align: center;
+  }
+  .order-messengers .messengers-icons {
+    justify-content: center;
+  }
+}
+
+/* Small Mobile (480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .hero h1 {
+    font-size: 48px;
+  }
+  .hero-sub {
+    font-size: 18px;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+  .product-card img {
+    width: 140px;
+  }
+  .messenger-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .messenger-icon img {
+    width: 24px;
+    height: 24px;
+  }
+  .btn-submit {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  .order-header h2 {
+    font-size: 28px;
+  }
+  .features-visual img {
+    width: 200px;
+  }
+  .badge {
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-icon {
+    margin: 0 auto;
+  }
+  .components-visual {
+    padding: 20px;
+  }
+  .age-tab {
+    padding: 14px 16px;
+  }
+  .age-tab strong {
+    font-size: 18px;
+  }
+  .footer-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+}
+/* Добавьте в конец media.css */
+
+@media (max-width: 1024px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .about-intro-img {
+    min-height: 250px;
+    order: -1;
+  }
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-showcase {
+    gap: 20px;
+  }
+  .showcase-box {
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-box {
+    width: 130px;
+  }
+  .about-intro-img {
+    min-height: 200px;
+    padding: 20px;
+  }
+  .about-intro-img img {
+    max-width: 180px;
+  }
+}
