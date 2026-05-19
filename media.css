@@ -21,35 +21,35 @@
     order: -1;
   }
 
-  .about-middle {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-
-  /* На планшете убираем сложную линию, делаем просто список */
-  .timeline::before {
-    display: none;
-  }
-  .timeline-item::before {
+  /* Убираем таймлайн на планшетах */
+  .timeline::before,
+  .timeline-item::after {
     display: none;
   }
 
   .timeline-item.left,
   .timeline-item.right {
     justify-content: center;
+    padding: 0;
+    text-align: center;
   }
+
   .step-card {
     max-width: 100%;
   }
+  .step-icon {
+    margin: 0 auto 16px;
+  }
 
   .components-wrapper {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-  .components-image {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+  .components-left {
+    min-height: 400px;
+  }
+  .components-image-box img {
+    max-width: 280px;
   }
   .components-grid {
     grid-template-columns: 1fr;
@@ -171,9 +171,6 @@
     max-width: 180px;
   }
 
-  .about-steps {
-    grid-template-columns: 1fr;
-  }
   .action-group.center {
     justify-content: center;
   }
@@ -288,12 +285,12 @@
     font-size: 20px;
   }
   .components-title {
-    font-size: 24px;
+    font-size: 26px;
   }
-  .component-item h3 {
+  .comp-item h3 {
     font-size: 16px;
   }
-  .component-item p {
+  .comp-item p {
     font-size: 13px;
   }
   .audience-age {

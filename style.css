@@ -311,224 +311,7 @@ a {
 }
 
 /* =========================================
-   5. ABOUT (TIMELINE)
-   ========================================= */
-.about {
-  background: var(--light-blue-bg);
-  padding: 80px 0 100px;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-main-title {
-  text-align: center;
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 700;
-  margin-bottom: 60px;
-  color: var(--text-dark);
-  position: relative;
-  z-index: 2;
-}
-
-/* Верхний блок */
-.about-intro {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 50px;
-  align-items: center;
-  margin-bottom: 60px;
-  position: relative;
-  z-index: 2;
-}
-.about-intro-img {
-  background: linear-gradient(135deg, #d4edff, #e8f5fd);
-  border-radius: 20px;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.about-intro-img img {
-  max-width: 280px;
-}
-.about-intro-text h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  line-height: 1.4;
-}
-.about-intro-text p {
-  font-size: 15px;
-  color: var(--text-mid);
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-/* Блок с текстом и банкой */
-.about-middle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 80px;
-  position: relative;
-  z-index: 2;
-}
-.about-middle-text {
-  max-width: 350px;
-  font-size: 15px;
-  color: var(--text-mid);
-  line-height: 1.6;
-}
-.about-middle-product img {
-  width: 200px;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
-  transform: rotate(-5deg);
-}
-
-/* TIMELINE (Линия и карточки) */
-.timeline {
-  position: relative;
-  max-width: 1100px;
-  margin: 0 auto 100px;
-  z-index: 2;
-}
-
-/* ЛИНИЯ (Рисуем через CSS - ГАРАНТИРОВАННО РАБОТАЕТ) */
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #cbd5e1 0,
-    #cbd5e1 10px,
-    transparent 10px,
-    transparent 20px
-  );
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-.timeline-item {
-  display: flex;
-  margin-bottom: 60px;
-  position: relative;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-/* Позиционирование карточек */
-.timeline-item.left {
-  justify-content: flex-start;
-}
-.timeline-item.right {
-  justify-content: flex-end;
-}
-
-.step-card {
-  padding: 24px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 400px;
-  transition: 0.3s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 1;
-}
-.step-card:hover {
-  transform: translateY(-5px);
-}
-.step-card.white {
-  background: #ffffff;
-  border: 1px solid #e0eaf5;
-}
-.step-card.blue {
-  background: var(--blue);
-  color: #ffffff;
-}
-
-.step-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 16px;
-  display: block;
-  color: var(--blue);
-}
-
-.step-card.blue .step-icon {
-  color: #ffffff;
-}
-
-.step-card h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.step-card p {
-  font-size: 14px;
-  line-height: 1.5;
-  opacity: 0.9;
-}
-
-/* Точки на линии */
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  top: 30px;
-  width: 16px;
-  height: 16px;
-  background: #ffffff;
-  border: 3px solid var(--blue);
-  border-radius: 50%;
-  z-index: 2;
-}
-.timeline-item.left::before {
-  right: calc(50% - 8px);
-}
-.timeline-item.right::before {
-  left: calc(50% - 8px);
-}
-
-/* Низ */
-.about-bottom {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-.bottom-boxes {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 30px;
-}
-.bottom-boxes img {
-  width: 180px;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
-  transition: 0.3s;
-}
-.bottom-boxes img:hover {
-  transform: translateY(-8px);
-}
-.bottom-text h3 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.bottom-text p {
-  font-size: 15px;
-  color: var(--text-mid);
-  margin-bottom: 24px;
-}
-
-/* =========================================
-   6. BUTTONS & ACTION GROUPS (ОБНОВЛЕННЫЕ)
+   5. BUTTONS & ACTION GROUPS
    ========================================= */
 .action-group {
   display: flex;
@@ -605,62 +388,303 @@ a {
 }
 
 /* =========================================
-   7. COMPONENTS
+   6. ABOUT (TIMELINE)
+   ========================================= */
+.about {
+  background: var(--light-blue-bg);
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-main-title {
+  text-align: center;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 2;
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+.about-intro-img {
+  background: linear-gradient(135deg, #d4edff, #e8f5fd);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-intro-img img {
+  max-width: 280px;
+}
+.about-intro-text h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.about-intro-text p {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+}
+
+/* ЛИНИЯ (Строго по центру) */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #cbd5e1 0,
+    #cbd5e1 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Точки на линии */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border: 3px solid var(--blue);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ЛЕВЫЕ КАРТОЧКИ */
+.timeline-item.left {
+  justify-content: flex-end;
+  padding-right: calc(50% + 30px);
+  text-align: right;
+}
+.timeline-item.left::after {
+  left: auto;
+  right: calc(50% - 8px);
+}
+
+/* ПРАВЫЕ КАРТОЧКИ */
+.timeline-item.right {
+  justify-content: flex-start;
+  padding-left: calc(50% + 30px);
+  text-align: left;
+}
+.timeline-item.right::after {
+  left: calc(50% - 8px);
+}
+
+.step-card {
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+}
+.step-card:hover {
+  transform: translateY(-5px);
+}
+.step-card.white {
+  background: #ffffff;
+  border: 1px solid #e0eaf5;
+}
+.step-card.blue {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.step-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  display: block;
+  color: var(--blue);
+}
+.step-card.blue .step-icon {
+  filter: brightness(0) invert(1);
+}
+
+.step-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.step-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.about-bottom {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.bottom-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.bottom-boxes img {
+  width: 180px;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+  transition: 0.3s;
+}
+.bottom-boxes img:hover {
+  transform: translateY(-8px);
+}
+.bottom-text h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.bottom-text p {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-bottom: 24px;
+}
+
+/* =========================================
+   7. COMPONENTS (ИСПРАВЛЕННЫЕ РАЗМЕРЫ)
    ========================================= */
 .components {
   background: #ffffff;
   padding: var(--section-gap) 0;
 }
+
 .components-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 420px 1fr;
   gap: 60px;
-  align-items: flex-start;
+  align-items: stretch;
 }
-.components-image {
-  flex: 0 0 480px;
+
+.components-left {
   background: linear-gradient(135deg, #2196f3, #64b5f6);
-  border-radius: var(--radius-lg);
+  border-radius: 24px;
   padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 500px;
+  min-height: 580px;
+  position: relative;
+  overflow: hidden;
 }
-.components-image img {
+
+.components-image-box {
+  position: relative;
+  z-index: 2;
+}
+.components-image-box img {
   width: 100%;
+  max-width: 360px;
   height: auto;
-  max-width: 380px;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
 }
-.components-info {
-  flex: 1;
+
+.components-left::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -50px;
+  right: -50px;
 }
+.components-left::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  bottom: -30px;
+  left: -30px;
+}
+
+.components-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .components-title {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   margin-bottom: 40px;
   line-height: 1.3;
+  color: var(--text-dark);
 }
 .components-title span {
   color: var(--blue);
+  display: block;
+  margin-top: 4px;
 }
+
 .components-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px 40px;
+  gap: 28px 40px;
   margin-bottom: 40px;
 }
-.component-item {
-  border-left: 3px solid var(--blue);
+
+.comp-item {
   padding-left: 16px;
+  border-left: 3px solid var(--blue);
 }
-.component-item h3 {
-  font-size: 18px;
+.comp-item h3 {
+  font-size: 17px;
   font-weight: 700;
   margin-bottom: 8px;
   color: var(--text-dark);
 }
-.component-item p {
+.comp-item p {
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-mid);
