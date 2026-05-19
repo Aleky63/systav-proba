@@ -14,21 +14,22 @@
     <link rel="stylesheet" href="media.css" />
   </head>
   <body>
+    <!-- NAV -->
     <nav class="nav">
       <div class="container">
-        <a href="#" class="nav-logo">
-          <img src="img/logo_white.png" alt="Логотип FMF" />
-        </a>
+        <a href="#" class="nav-logo"
+          ><img src="img/logo_white.png" alt="Логотип"
+        /></a>
         <ul class="nav-links">
+          <li><a href="#about">О продукте</a></li>
           <li><a href="#components">Состав</a></li>
           <li><a href="#audience">Для кого</a></li>
-          <li><a href="#features">Преимущества</a></li>
-          <li><a href="#order">Заказать</a></li>
+          <li><a href="#products">Заказать</a></li>
           <li><a href="#faq">Вопросы</a></li>
         </ul>
         <div class="nav-actions">
           <a class="nav-btn" href="#order">Оставить заявку</a>
-          <a class="nav-arrow" href="#order" aria-label="Оставить заявку">↗</a>
+          <a class="nav-arrow" href="#order">↗</a>
         </div>
         <button class="nav-hamburger" aria-label="Меню">
           <span></span><span></span><span></span>
@@ -36,36 +37,36 @@
       </div>
     </nav>
 
+    <!-- HERO -->
     <header class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Свобода<br />движения</h1>
-          <div class="hero-line"></div>
-          <p class="hero-sub">
-            «Complex SW СУСТАВЫ» порошок<br />для опорно-двигательного аппарата
-          </p>
-          <div class="hero-actions">
-            <a class="nav-btn" href="#order">Купить в 1 клик</a>
-            <a class="nav-arrow" href="#order" aria-label="Купить в 1 клик"
-              >↗</a
-            >
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">Свобода движения</h1>
+            <div class="hero-line"></div>
+            <p class="hero-descr">
+              «Complex SW СУСТАВЫ» порошок<br />для опорно-двигательного
+              аппарата
+            </p>
+            <div class="hero-buttons">
+              <a href="#order" class="btn-white">Купить в 1 клик</a>
+              <a href="#order" class="btn-arrow">↗</a>
+            </div>
+          </div>
+          <div class="hero-product">
+            <div class="product-bubbles">
+              <div class="bubble b1"></div>
+              <div class="bubble b2"></div>
+              <div class="bubble b3"></div>
+            </div>
+            <img src="img/box1.png" alt="Суставит" />
+          </div>
+          <div class="hero-weight">
+            <div class="hero-line"></div>
+            <p><strong>420г. / 30 порций</strong><br />Месячный курс</p>
           </div>
         </div>
-        <div class="hero-product-zone">
-          <div class="hero-bubble bubble-one"></div>
-          <div class="hero-bubble bubble-two"></div>
-          <div class="hero-bubble bubble-three"></div>
-          <img
-            class="hero-product"
-            src="img/box1.png"
-            alt="Упаковка Суставит"
-          />
-        </div>
-        <div class="hero-side">
-          <div class="hero-line"></div>
-          <p><strong>420г. / 30 порций</strong><br />Месячный курс</p>
-        </div>
-        <div class="hero-bottom-text">
+        <div class="hero-bottom">
           <h2>1 порция = 17 обычных капсул</h2>
           <p>
             Комплекс, который питает суставы изнутри<br />и способствует
@@ -75,315 +76,412 @@
       </div>
     </header>
 
-    <!-- Новая секция: О продукте (после hero) -->
-    <section class="about-product" id="about">
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
       <div class="container">
-        <h2 class="about-title">
+        <h2 class="about-main-title">
           Комплекс для тех, кто хочет свободно двигаться и заботиться о своих
           суставах каждый день
         </h2>
 
+        <!-- Верхний блок: Картинка + Текст -->
         <div class="about-intro">
           <div class="about-intro-img">
             <img src="img/joint.png" alt="Иллюстрация сустава" />
           </div>
           <div class="about-intro-text">
             <h3>
-              Комплекс для ежедневной и курсовой поддержки суставов и хрящевой
-              ткани
+              Комплекс для ежедневной нутритивной поддержки суставов и
+              естественного обновления хрящевой ткани, помогающий сохранять
+              подвижность и комфорт при активном образе жизни
             </h3>
             <p>
+              «Complex SW СУСТАВЫ» — это комплексная добавка, сочетающая высокие
+              дозировки глюкозамина и хондроитина с противовоспалительной
+              босвелией и полным набором витаминов.
+            </p>
+            <div class="action-group">
+              <a href="#order" class="btn-primary">Оставить заявку</a>
+              <a href="#order" class="btn-icon">↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блок с текстом и банкой -->
+        <div class="about-middle">
+          <div class="about-middle-text">
+            <p>
+              Представьте, что вы каждый день дарите своим суставам мягкую
+              поддержку, которая помогает не откладывать любимые и здоровые.
+            </p>
+          </div>
+          <div class="about-middle-product">
+            <img src="img/box2.png" alt="Банка" />
+          </div>
+        </div>
+
+        <!-- Timeline (Шаги) -->
+        <div class="timeline">
+          <!-- Карточка 1 (Слева) -->
+          <div class="timeline-item left">
+            <div class="step-card white">
+              <!-- Иконка сустава -->
+              <svg class="step-icon" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M20 5C15 5 12 8 12 13C12 18 15 22 20 22C25 22 28 18 28 13C28 8 25 5 20 5ZM20 24C14 24 10 29 10 36H30C30 29 26 24 20 24Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <h4>Регенерация</h4>
+              <p>
+                Глюкозамин и хондроитин стимулируют восстановление хрящевой
+                ткани и снижают воспаление.
+              </p>
+            </div>
+          </div>
+
+          <!-- Карточка 2 (Справа) -->
+          <div class="timeline-item right">
+            <div class="step-card blue">
+              <!-- Иконка питания (звезда/вспышка) -->
+              <svg class="step-icon" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M20 4L24 14H34L26 22L29 32L20 26L11 32L14 22L6 14H16L20 4Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <h4>Питание суставов</h4>
+              <p>
+                Полный спектр нутриентов обеспечивает глубокое питание
+                соединительной ткани и связок.
+              </p>
+            </div>
+          </div>
+
+          <!-- Карточка 3 (Слева) - С ТВОЕЙ SVG ИКОНКОЙ -->
+          <div class="timeline-item left">
+            <div class="step-card blue">
+              <!-- ТВОЯ ИКОНКА (BOX) -->
+              <svg
+                class="step-icon"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M34.88 5.11675C32.7633 3.00008 29.18 2.75008 24.78 4.45008C23.2133 5.05008 21.6133 5.88341 19.9967 6.88341C18.38 5.86675 16.7633 5.05008 15.2133 4.45008C10.83 2.76675 7.23 3.00008 5.11333 5.11675C2.99666 7.23341 2.74666 10.8167 4.44666 15.2167C5.04666 16.7834 5.88 18.3834 6.88 20.0001C5.86333 21.6167 5.04666 23.2334 4.44666 24.7834C2.76333 29.1667 2.99666 32.7667 5.11333 34.8834C6.29666 36.0667 7.94666 36.6667 9.93 36.6667C11.4967 36.6667 13.28 36.3001 15.2133 35.5501C16.78 34.9501 18.38 34.1167 19.9967 33.1167C21.6133 34.1334 23.23 34.9501 24.78 35.5501C26.7133 36.3001 28.4967 36.6667 30.0633 36.6667C32.0467 36.6667 33.6967 36.0667 34.88 34.8834C36.9967 32.7667 37.2467 29.1834 35.5467 24.7834C34.9467 23.2167 34.1133 21.6167 33.1133 20.0001C34.13 18.3834 34.9467 16.7667 35.5467 15.2167C37.23 10.8334 36.9967 7.23341 34.88 5.11675ZM7.56333 14.0167C6.41333 11.0167 6.38 8.56675 7.48 7.46675C8.01333 6.93341 8.86333 6.66675 9.94666 6.66675C11.08 6.66675 12.48 6.96675 14.0133 7.55008C14.98 7.91675 15.98 8.40008 16.9967 8.96675C13.9924 11.2849 11.2981 13.9791 8.98 16.9834C8.41333 15.9667 7.93 14.9834 7.56333 14.0001V14.0167ZM19.9967 10.9001C23.4994 13.4246 26.5721 16.4974 29.0967 20.0001C26.5721 23.5028 23.4994 26.5756 19.9967 29.1001C16.4939 26.5756 13.4212 23.5028 10.8967 20.0001C13.4212 16.4974 16.4939 13.4246 19.9967 10.9001ZM14.0133 32.4334C11.0133 33.5834 8.56333 33.6167 7.46333 32.5167C6.36333 31.4167 6.39666 28.9667 7.54666 25.9667C7.91333 25.0001 8.39666 24.0001 8.96333 22.9834C11.2815 25.9877 13.9757 28.682 16.98 31.0001C15.9633 31.5667 14.98 32.0501 13.9967 32.4167L14.0133 32.4334ZM32.43 25.9667C33.58 28.9667 33.6133 31.4167 32.5133 32.5167C31.4133 33.6167 28.9633 33.5834 25.9633 32.4334C24.9967 32.0667 23.9967 31.5834 22.98 31.0167C25.9843 28.6986 28.6785 26.0044 30.9967 23.0001C31.5633 24.0167 32.0467 25.0001 32.4133 25.9834L32.43 25.9667ZM32.43 14.0001C32.0633 14.9667 31.58 15.9667 31.0133 16.9834C28.6952 13.9791 26.001 11.2849 22.9967 8.96675C24.0133 8.40008 24.9967 7.91675 25.98 7.55008C27.5133 6.96675 28.9133 6.66675 30.0467 6.66675C31.18 6.66675 31.98 6.93341 32.53 7.46675C33.63 8.56675 33.5967 11.0167 32.4467 14.0167L32.43 14.0001Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M22.9531 22.95C24.5865 21.3166 24.5865 18.6833 22.9531 17.05C21.3198 15.4166 18.6865 15.4166 17.0531 17.05C15.4198 18.6833 15.4198 21.3166 17.0531 22.95C18.6865 24.5833 21.3198 24.5833 22.9531 22.95Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <h4>Особенный состав</h4>
+              <p>
+                Уникальная комбинация босвелии, коллагена, витаминов и минералов
+                для комплексного действия.
+              </p>
+            </div>
+          </div>
+
+          <!-- Карточка 4 (Справа) -->
+          <div class="timeline-item right">
+            <div class="step-card white">
+              <!-- Иконка времени -->
+              <svg class="step-icon" viewBox="0 0 40 40" fill="none">
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="14"
+                  stroke="currentColor"
+                  stroke-width="3"
+                />
+                <path
+                  d="M20 12V20L26 24"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <h4>Результат</h4>
+              <p>
+                Заметное улучшение подвижности и снижение болевого синдрома уже
+                через 2–3 недели приёма.
+              </p>
+            </div>
+          </div>
+
+          <!-- Карточка 5 (Справа) -->
+          <div class="timeline-item right">
+            <div class="step-card blue">
+              <!-- Иконка мишени/эффекта -->
+              <svg class="step-icon" viewBox="0 0 40 40" fill="none">
+                <rect
+                  x="8"
+                  y="8"
+                  width="24"
+                  height="24"
+                  rx="4"
+                  stroke="currentColor"
+                  stroke-width="3"
+                />
+                <path
+                  d="M16 20L20 24L26 16"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <h4>Комплексный эффект</h4>
+              <p>
+                9 активных компонентов работают в синергии, обеспечивая
+                максимальную эффективность.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Нижний блок -->
+        <div class="about-bottom">
+          <div class="bottom-boxes">
+            <img src="img/box1.png" alt="Банка 1" />
+            <img src="img/box2.png" alt="Банка 2" />
+          </div>
+          <div class="bottom-text">
+            <h3>Питаем. Восстанавливаем.<br />Сохраняем подвижность.</h3>
+            <p>
+              «Complex SW СУСТАВЫ» — это комплексный подход к здоровью суставов.
+            </p>
+            <div class="action-group center">
+              <a href="#order" class="btn-primary">Оставить заявку</a>
+              <a href="#order" class="btn-icon">↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- COMPONENTS -->
+    <section class="components" id="components">
+      <div class="container">
+        <div class="components-wrapper">
+          <div class="components-image">
+            <img src="img/scoop.png" alt="Мерная ложка с порошком" />
+          </div>
+          <div class="components-info">
+            <h2 class="components-title">
+              «Complex SW СУСТАВЫ» — комплекс<br /><span
+                >из 9 активных компонентов</span
+              >
+            </h2>
+            <div class="components-grid">
+              <div class="component-item">
+                <h3>Глюкозамин</h3>
+                <p>
+                  Хондропротектор, который восстанавливает хрящевую ткань,
+                  уменьшает боль и воспаление в суставах.
+                </p>
+              </div>
+              <div class="component-item">
+                <h3>Хондроитин</h3>
+                <p>
+                  Является структурным компонентом хряща, который защищает его
+                  от разрушения и стимулирует выработку жидкости.
+                </p>
+              </div>
+              <div class="component-item">
+                <h3>МСМ</h3>
+                <p>
+                  Метилсульфонилметан укрепляет суставы, снимает воспаление и
+                  боль, улучшает кожу, волосы, ногти.
+                </p>
+              </div>
+              <div class="component-item">
+                <h3>Коллаген</h3>
+                <p>
+                  Является основным фибриллярным белком соединительной ткани,
+                  обеспечивающим прочность и эластичность.
+                </p>
+              </div>
+              <div class="component-item">
+                <h3>Босвелия</h3>
+                <p>
+                  Подавляет воспаление в суставах, блокируя синтез лейкотриенов,
+                  что уменьшает боль.
+                </p>
+              </div>
+              <div class="component-item">
+                <h3>Витамин С</h3>
+                <p>
+                  Участвует в синтезе коллагена, метаболизме гормонов и улучшает
+                  усвоение железа в кишечнике.
+                </p>
+              </div>
+              <div class="component-item">
+                <h3>Витамин Е</h3>
+                <p>
+                  Защищает суставы, замедляя разрушение хряща и уменьшая боль и
+                  скованность.
+                </p>
+              </div>
+              <div class="component-item">
+                <h3>Марганец</h3>
+                <p>
+                  Необходим для работы центральной нервной системы, крепости
+                  костей и жирового обмена.
+                </p>
+              </div>
+              <div class="component-item">
+                <h3>Селен</h3>
+                <p>
+                  Замедляет старение как антиоксидант и сохраняет эластичность
+                  тканей.
+                </p>
+              </div>
+            </div>
+            <div class="components-button">
+              <a href="#order" class="btn-components">Купить в 1 клик</a
+              ><a href="#order" class="btn-components-arrow">↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUDIENCE -->
+    <section class="audience" id="audience">
+      <div class="audience-bg">
+        <img src="img/foto.png" alt="Активная женщина" />
+      </div>
+      <div class="container audience-container">
+        <h2 class="audience-title">
+          Подходит для всех, кто заботится о своем здоровье и думает о своем
+          будущем заранее.
+        </h2>
+        <div class="audience-cards">
+          <div class="audience-card">
+            <div class="audience-age">18+ лет</div>
+            <p class="audience-desc">Поддержка суставов при травмах</p>
+          </div>
+          <div class="audience-card active">
+            <div class="audience-age">35+ лет</div>
+            <p class="audience-desc">Профилактика возрастных изменений</p>
+          </div>
+          <div class="audience-card">
+            <div class="audience-age">45+</div>
+            <p class="audience-desc">Сохранение здоровья у женщин</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="features-main-title">Сравнение с другими продуктами</h2>
+        <div class="features-grid">
+          <div class="features-col features-text">
+            <p class="features-desc">
               «Complex SW СУСТАВЫ» — это комплексная добавка, сочетающая высокие
               дозировки глюкозамина и хондроитина с противовоспалительной
               босвелией и полным набором витаминов для защиты соединительной
               ткани.
             </p>
-            <p>
+            <p class="features-desc">
               В отличие от многих стандартных средств на рынке, он предлагает
-              значительную систему доз в одной порции.
+              законченную систему «все в одной порции».
             </p>
-            <p>
-              Ключевым преимуществом является наличие уникальной порошковой
-              дозировки (например, 1350 мг глюкозамина), тогда как многие на
-              рынке используют уменьшенную дозировку ради экономии.
+            <p class="features-desc">
+              Ключевым преимуществом является наличие клинически значимых
+              дозировок (например, 1250 мг глюкозамина).
             </p>
-            <a href="#order" class="btn">Узнать больше ↗</a>
-          </div>
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-num">1</div>
-            <h4>Регенерация</h4>
-            <p>
-              Глюкозамин и хондроитин стимулируют восстановление хрящевой ткани
-              и снижают воспаление.
-            </p>
-          </div>
-          <div class="benefit-card blue">
-            <div class="benefit-num">2</div>
-            <h4>Питание суставов</h4>
-            <p>
-              Полный спектр нутриентов обеспечивает глубокое питание
-              соединительной ткани и связок.
-            </p>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-num">3</div>
-            <h4>Результат</h4>
-            <p>
-              Заметное улучшение подвижности и снижение болевого синдрома уже
-              через 2–3 недели приёма.
-            </p>
-          </div>
-          <div class="benefit-card blue">
-            <div class="benefit-num">4</div>
-            <h4>Особенный состав</h4>
-            <p>
-              Уникальная комбинация босвелии, коллагена, витаминов и минералов
-              для комплексного действия.
-            </p>
-          </div>
-          <div class="benefit-card">
-            <div class="benefit-num">5</div>
-            <h4>Комплексный эффект</h4>
-            <p>
-              9 активных компонентов работают в синергии, обеспечивая
-              максимальную эффективность.
-            </p>
-          </div>
-          <div class="benefit-card blue">
-            <div class="benefit-num">6</div>
-            <h4>Удобство приёма</h4>
-            <p>
-              Растворимый порошок с нейтральным вкусом. Достаточно одной порции
-              в день.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-showcase">
-          <img
-            src="img/box1.png"
-            alt="Суставит Эластика"
-            class="showcase-box"
-          />
-          <img
-            src="img/box2.png"
-            alt="Суставит Эластика PRO"
-            class="showcase-box"
-          />
-        </div>
-
-        <div class="about-footer-text">
-          <h3>Питаем. Восстанавливаем. Сохраняем подвижность.</h3>
-          <p>
-            «Complex SW СУСТАВЫ» — это комплексный подход к здоровью суставов.
-          </p>
-          <a href="#order" class="btn">Заказать сейчас ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 1. Состав -->
-    <section class="components" id="components">
-      <div class="container split">
-        <div class="components-visual">
-          <img src="img/scoop.png" alt="Мерная ложка с порошком" />
-        </div>
-        <div class="components-content">
-          <span class="section-label">Состав</span>
-          <h2 class="section-title">
-            «Complex SW СУСТАВЫ» — комплекс из 9 активных компонентов
-          </h2>
-          <div class="components-grid">
-            <div class="comp-item">
-              <h4>Глюкозамин</h4>
-              <p>Восстанавливает хрящевую ткань, снижает боль и воспаление.</p>
-            </div>
-            <div class="comp-item">
-              <h4>Хондроитин</h4>
-              <p>
-                Улучшает подвижность суставов, стимулирует выработку коллагена.
-              </p>
-            </div>
-            <div class="comp-item">
-              <h4>MSM</h4>
-              <p>
-                Снимает воспаление, улучшает гибкость и эластичность связок.
-              </p>
-            </div>
-            <div class="comp-item">
-              <h4>Коллаген</h4>
-              <p>
-                Укрепляет соединительную ткань, поддерживает здоровье кожи и
-                костей.
-              </p>
-            </div>
-            <div class="comp-item">
-              <h4>Босвелия</h4>
-              <p>
-                Натуральный противовоспалительный компонент, снижает отечность.
-              </p>
-            </div>
-            <div class="comp-item">
-              <h4>Витамин С</h4>
-              <p>Необходим для синтеза коллагена и укрепления иммунитета.</p>
-            </div>
-            <div class="comp-item">
-              <h4>Витамин Е</h4>
-              <p>Антиоксидант, защищает клетки от окислительного стресса.</p>
-            </div>
-            <div class="comp-item">
-              <h4>Селен</h4>
-              <p>
-                Поддерживает работу щитовидной железы и антиоксидантную защиту.
-              </p>
-            </div>
-            <div class="comp-item">
-              <h4>Марганец</h4>
-              <p>Участвует в формировании костной и хрящевой ткани.</p>
-            </div>
-          </div>
-          <a href="#order" class="btn">Купить в 1 клик ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. Аудитория -->
-    <section class="audience" id="audience">
-      <div class="audience-bg">
-        <img
-          src="img/foto.png"
-          alt="Активная женщина"
-          class="audience-bg-img"
-        />
-      </div>
-      <div class="container audience-content">
-        <div class="audience-text">
-          <h2 class="section-title">
-            Подходит для всех, кто заботится о своем здоровье и думает о своем
-            будущем заранее.
-          </h2>
-        </div>
-        <div class="age-tabs">
-          <div class="age-tab">
-            <strong>18+ лет</strong
-            ><span>Поддержка суставов при тренировках</span>
-          </div>
-          <div class="age-tab active">
-            <strong>35+ лет</strong
-            ><span>Профилактика возрастных изменений</span>
-          </div>
-          <div class="age-tab">
-            <strong>45+ лет</strong
-            ><span>Сохранение здоровья и мобильности</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Преимущества / Сравнение -->
-    <section class="features" id="features">
-      <div class="container">
-        <div class="features-header">
-          <span class="section-label">Преимущества</span>
-          <h2 class="section-title">Сравнение с другими продуктами</h2>
-          <p class="section-desc">
-            «Complex SW СУСТАВЫ» — это комплексная добавка, сочетающая высокие
-            дозировки глюкозамина и хондроитина с противовоспалительной
-            босвелией и полным набором витаминов для защиты соединительной
-            ткани.
-          </p>
-        </div>
-        <div class="features-grid">
-          <div class="features-visual">
-            <img src="img/box2.png" alt="Complex SW СУСТАВЫ" />
-            <div class="features-badges">
-              <div class="badge">
-                <span>✓</span>
-                <div>
-                  <strong>Курс на 1 месяц</strong
-                  ><span>30 порций • 1300 мг / день</span>
-                </div>
-              </div>
-              <a href="#order" class="btn-buy-small">Купить в 1 клик ↗</a>
-            </div>
-          </div>
-          <div class="features-info">
-            <div class="feature-card">
-              <div class="feature-icon">⚡</div>
+            <div class="feature-highlight">
+              <svg
+                class="feature-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M12 1v6m0 6v6m11-7h-6m-6 0H1m18.36-5.64l-4.24 4.24m-4.24 4.24l-4.24 4.24m12.72-12.72l-4.24-4.24m-4.24-4.24l-4.24-4.24"
+                ></path>
+              </svg>
               <div>
                 <h4>1 порция = 17 обычных капсул</h4>
                 <p>
-                  Доза в 3 раза выше конкурентов. Достаточно одной порции в
-                  день.
+                  Доза в 3 раза выше конкурентов. Достаточно одной порции в день
                 </p>
               </div>
             </div>
-            <div class="feature-card">
-              <div class="feature-icon">🛡️</div>
-              <div>
-                <h4>Полный спектр нутриентов</h4>
-                <p>
-                  9 активных компонентов в одной формуле для комплексной
-                  поддержки.
-                </p>
+          </div>
+          <div class="features-col features-center">
+            <div class="product-image-wrap">
+              <img src="img/box2.png" alt="Complex SW СУСТАВЫ" />
+              <div class="ingredients-plate">
+                <ul class="ingredients-list">
+                  <li><span>✓</span> ГЛЮКОЗАМИН</li>
+                  <li><span>✓</span> ХОНДРОИТИН</li>
+                  <li><span>✓</span> КОЛЛАГЕН</li>
+                  <li><span>✓</span> МСМ</li>
+                  <li><span>✓</span> ВИТАМИНЫ C, E</li>
+                  <li><span>✓</span> Mn, Se</li>
+                </ul>
               </div>
             </div>
-            <div class="feature-card">
-              <div class="feature-icon">💧</div>
+          </div>
+          <div class="features-col features-right-col">
+            <div class="feature-highlight right">
+              <svg
+                class="feature-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M12 1v6m0 6v6m11-7h-6m-6 0H1m18.36-5.64l-4.24 4.24m-4.24 4.24l-4.24 4.24m12.72-12.72l-4.24-4.24m-4.24-4.24l-4.24-4.24"
+                ></path>
+              </svg>
               <div>
-                <h4>Удобная форма приема</h4>
-                <p>
-                  Растворимый порошок с нейтральным вкусом. Легко принимать
-                  ежедневно.
-                </p>
+                <h4>Курс на 1 месяц</h4>
+                <p>30 порций = 130₽ в день</p>
               </div>
+            </div>
+            <div class="btn-features-wrap">
+              <a href="#order" class="btn-features">Купить в 1 клик</a>
+              <a href="#order" class="btn-features-arrow">↗</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. Карточка товара + Инструкция -->
-    <section class="upsell" id="upsell">
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
       <div class="container">
-        <div class="upsell-grid">
-          <div class="upsell-card blue">
-            <div class="upsell-header">
-              <h3>«Complex SW СУСТАВЫ»</h3>
-              <p>для опорно-двигательного аппарата</p>
-            </div>
-            <div class="upsell-product">
-              <img src="img/box2.png" alt="Complex SW СУСТАВЫ" />
-            </div>
-            <div class="upsell-price-block">
-              <div class="price">3 900 ₽</div>
-              <div class="price-details">420г / 30 порций</div>
-            </div>
-            <div class="upsell-actions">
-              <a href="#order" class="btn-buy">Купить в 1 клик</a>
-              <a
-                href="#order"
-                class="btn-buy-arrow"
-                aria-label="Купить в 1 клик"
-                >↗</a
-              >
+        <div class="products-grid">
+          <div class="product-card product-blue">
+            <img src="img/box2.png" alt="Complex SW СУСТАВЫ" />
+            <h3 class="product-title">«Complex SW СУСТАВЫ»</h3>
+            <p class="product-subtitle">для опорно-двигательного аппарата</p>
+            <div class="product-price">3 900 ₽</div>
+            <div class="product-weight">420г / 30 порций</div>
+            <div class="product-buttons">
+              <a href="#order" class="btn-product-white">Купить в 1 клик</a
+              ><a href="#order" class="btn-product-arrow">↗</a>
             </div>
           </div>
-
-          <div class="upsell-card white">
-            <div class="instruction-header">
-              <h3>Инструкция и рекомендации<br />по применению</h3>
-            </div>
-            <div class="instruction-visual">
-              <img
-                src="img/box3.png"
-                alt="Complex SW СУСТАВЫ"
-                class="instr-product"
-              />
-            </div>
+          <div class="product-card product-white">
+            <h3 class="instruction-title">
+              Инструкция и рекомендации<br />по применению
+            </h3>
+            <img src="img/box3.png" alt="Инструкция" class="instruction-img" />
             <div class="instruction-steps">
               <div class="step">1 ложка в день</div>
               <div class="step">Растворить в 200 мл воды</div>
@@ -394,113 +492,141 @@
       </div>
     </section>
 
-    <!-- 5. FAQ -->
+    <!-- FAQ -->
     <section class="faq" id="faq">
       <div class="container">
         <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
+            <button class="faq-question">
               <span
                 >Можно ли «Complex SW СУСТАВЫ» принимать с другими
-                препаратами</span
+                препаратами?</span
               ><svg
-                class="faq-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
+                class="faq-icon-plus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <path
-                  d="M10 4V16M4 10H16"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line></svg
+              ><svg
+                class="faq-icon-minus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </button>
             <div class="faq-answer">
               <p>
                 Да, комплекс можно принимать вместе с другими препаратами.
-                Однако рекомендуется проконсультироваться с врачом для
-                оптимального сочетания.
+                Однако рекомендуется проконсультироваться с врачом.
               </p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
+            <button class="faq-question">
               <span>Какие противопоказания?</span
               ><svg
-                class="faq-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
+                class="faq-icon-plus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <path
-                  d="M10 4V16M4 10H16"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line></svg
+              ><svg
+                class="faq-icon-minus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </button>
             <div class="faq-answer">
               <p>
                 Противопоказанием является индивидуальная непереносимость
-                компонентов препарата. Не рекомендуется при беременности и в
-                период лактации.
+                компонентов препарата.
               </p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
+            <button class="faq-question">
               <span>Почему в форме порошка, а не капсул?</span
               ><svg
-                class="faq-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
+                class="faq-icon-plus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <path
-                  d="M10 4V16M4 10H16"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line></svg
+              ><svg
+                class="faq-icon-minus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </button>
             <div class="faq-answer">
               <p>
                 Порошковая форма обеспечивает лучшую усвояемость и быстрое
-                действие. Одна порция порошка эквивалентна 17 обычным капсулам,
-                что удобнее для приёма.
+                действие. Одна порция эквивалентна 17 капсулам.
               </p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Какие показания для приема комплекса</span
+            <button class="faq-question">
+              <span>Какие показания для приема комплекса?</span
               ><svg
-                class="faq-icon"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
+                class="faq-icon-plus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <path
-                  d="M10 4V16M4 10H16"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line></svg
+              ><svg
+                class="faq-icon-minus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </button>
             <div class="faq-answer">
               <p>
                 Комплекс рекомендуется при болях в суставах, скованности
-                движений, после травм, при повышенных физических нагрузках, а
-                также для профилактики возрастных изменений.
+                движений, после травм, при повышенных нагрузках.
               </p>
             </div>
           </div>
@@ -508,102 +634,80 @@
       </div>
     </section>
 
-    <!-- 6. Order -->
+    <!-- ORDER -->
     <section class="order" id="order">
       <div class="container">
-        <div class="order-header">
-          <h2>Остались вопросы? Напишите нам</h2>
-        </div>
+        <h2 class="order-title">Остались вопросы? Напишите нам</h2>
         <div class="order-grid">
-          <div class="order-contact">
-            <div class="order-label">Эл. почта</div>
-            <a href="mailto:info@test.ru" class="order-email">info@test.ru</a>
-            <div class="order-messengers">
-              <div class="messengers-label">Мессенджеры</div>
-              <div class="messengers-icons">
-                <a
-                  href="#"
-                  class="messenger-icon telegram"
-                  aria-label="Telegram"
-                  ><img src="img/telegram.svg" alt="Telegram"
-                /></a>
-                <a href="#" class="messenger-icon phone" aria-label="Телефон"
-                  ><img src="img/phone.svg" alt="Телефон"
-                /></a>
-                <a
-                  href="#"
-                  class="messenger-icon whatsapp"
-                  aria-label="WhatsApp"
-                  ><img src="img/whatsapp.svg" alt="WhatsApp"
-                /></a>
-                <a href="#" class="messenger-icon vk" aria-label="VK"
+          <div class="order-contacts">
+            <div class="contact-item">
+              <div class="contact-label">Эл. почта</div>
+              <a href="mailto:info@test.ru" class="contact-link"
+                >info@test.ru</a
+              >
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Мессенджеры</div>
+              <div class="messenger-icons">
+                <a href="#" class="messenger-icon"
+                  ><img src="img/telegram.svg" alt="Telegram" /></a
+                ><a href="#" class="messenger-icon"
+                  ><img src="img/phone.svg" alt="Phone" /></a
+                ><a href="#" class="messenger-icon"
+                  ><img src="img/whatsapp.svg" alt="WhatsApp" /></a
+                ><a href="#" class="messenger-icon"
                   ><img src="img/vk.svg" alt="VK"
                 /></a>
               </div>
             </div>
           </div>
-          <div class="order-form">
-            <form class="form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label>Имя</label
-                  ><input type="text" placeholder="Как к вам обращаться" />
+          <div class="order-form-wrap">
+            <form class="form-row-group">
+              <div class="form-group">
+                <label>Имя</label
+                ><input type="text" placeholder="Как к вам обращаться" />
+              </div>
+              <div class="form-group">
+                <label>Телефон</label
+                ><input type="tel" placeholder="+7 (___) ___-__-__" />
+              </div>
+              <div class="form-group">
+                <label>Эл. почта</label
+                ><input type="email" placeholder="Ваша эл.почта" />
+              </div>
+              <div class="form-bottom">
+                <div class="form-check">
+                  <input type="checkbox" id="consent" checked /><label
+                    for="consent"
+                    >Я даю свое согласие на обработку
+                    <span>персональных данных</span></label
+                  >
                 </div>
-                <div class="form-group">
-                  <label>Телефон</label
-                  ><input type="tel" placeholder="+7 (___) ___-__-__" />
-                </div>
-                <div class="form-group">
-                  <label>Эл. почта</label
-                  ><input type="email" placeholder="Ваша почта" />
+                <div class="form-buttons">
+                  <button type="submit" class="btn-submit">
+                    Оставить заявку</button
+                  ><a href="#" class="btn-submit-arrow">↗</a>
                 </div>
               </div>
-              <div class="form-consent">
-                <input type="checkbox" id="consent" checked /><label
-                  for="consent"
-                  >Я даю свое согласие на обработку персональных данных</label
-                >
-              </div>
-              <button type="submit" class="btn-submit">
-                Оставить заявку<svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <path
-                    d="M3 8H13M13 8L9 4M13 8L9 12"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
             </form>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-logo">
-          <img
-            src="img/logo_dark.png"
-            alt="Логотип FMF"
-            style="width: 120px; height: auto"
-          />
-        </div>
-        <div class="footer-bottom">
+        <div class="footer-top">
           <div class="footer-left">
-            <p>© 2026, Описалл</p>
+            <p>© 2026, Оптисалт</p>
             <p>Все права защищены</p>
           </div>
           <div class="footer-center">
-            <p class="disclaimer">
-              БАД, не является лекарственным средством. Требуется консультация
-              специалиста.
+            <img src="img/logo_dark.png" alt="FMF" class="footer-logo" />
+            <p class="footer-disclaimer">
+              БАД. Не является лекарственным средством. Требуется консультация
+              специалиста
             </p>
           </div>
           <div class="footer-right">

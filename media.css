@@ -1,52 +1,124 @@
 /* =========================================
-   Адаптивность
+   TABLET (1024px)
    ========================================= */
-
-/* Tablet (1024px) */
 @media (max-width: 1024px) {
-  .hero-inner {
+  .hero-content {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding-bottom: 60px;
+    gap: 30px;
   }
-  .hero-product-zone {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .hero-copy {
-    grid-column: 1;
-    grid-row: 1;
-    padding-top: 120px;
-  }
-  .hero-side {
+  .hero-weight {
     display: none;
   }
-  .hero-bottom-text {
+  .hero-bottom {
     grid-column: 1 / -1;
   }
-  .split,
-  .features-grid,
-  .products-grid,
+
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .about-intro-img {
+    order: -1;
+  }
+
+  .about-middle {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  /* На планшете убираем сложную линию, делаем просто список */
+  .timeline::before {
+    display: none;
+  }
+  .timeline-item::before {
+    display: none;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: center;
+  }
+  .step-card {
+    max-width: 100%;
+  }
+
+  .components-wrapper {
+    flex-direction: column;
+  }
+  .components-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .components-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+  .features-text {
+    align-items: center;
+  }
+  .feature-highlight {
+    justify-content: center;
+    text-align: left;
+  }
+  .features-center {
+    order: -1;
+  }
+  .ingredients-plate {
+    position: static;
+    margin: 20px auto 0;
+    display: inline-block;
+  }
+  .features-right-col {
+    align-items: center;
+  }
+
   .order-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .age-tabs {
+  .order-contacts {
+    flex-direction: row;
     flex-wrap: wrap;
-  }
-  .footer .container {
-    flex-direction: column;
+    justify-content: center;
     text-align: center;
   }
-  .footer-links {
+  .messenger-icons {
     justify-content: center;
+  }
+  .form-bottom {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .action-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  .footer-right {
+    text-align: center;
+  }
+  .footer-right a {
+    display: inline-block;
+    margin: 0 10px;
   }
 }
 
-/* Mobile (768px) */
+/* =========================================
+   MOBILE (768px)
+   ========================================= */
 @media (max-width: 768px) {
   .nav-links,
   .nav-actions {
@@ -55,164 +127,41 @@
   .nav-hamburger {
     display: flex;
   }
-  .hero-inner {
+  .hero-container {
+    padding-top: 100px;
+  }
+  .hero-content {
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
     text-align: center;
   }
-  .hero-product-zone {
-    margin: 40px 0;
+  .hero-text {
+    text-align: center;
+  }
+  .hero-buttons,
+  .about-buttons,
+  .components-button {
+    justify-content: center;
   }
   .hero-product {
-    max-width: 280px;
-  }
-  .hero-actions {
-    justify-content: center;
-  }
-  .hero-bottom-text h2 {
-    font-size: 24px;
-  }
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-  .age-tabs {
-    flex-direction: column;
-  }
-  .age-tab {
-    text-align: left;
-  }
-  .components-grid {
-    grid-template-columns: 1fr;
-  }
-  .components-visual img {
-    max-width: 200px;
-  }
-  .order-contact,
-  .order-form {
-    padding: 30px 20px;
-  }
-  .order-email {
-    font-size: 20px;
-  }
-  .order-grid {
-    gap: 30px;
-  }
-  .features-visual img {
-    width: 240px;
-  }
-  .product-card {
-    padding: 30px 20px;
-  }
-  .product-card img {
-    width: 160px;
-  }
-  .messengers-icons {
-    justify-content: center;
-  }
-  .order-contact {
-    text-align: center;
-  }
-  .order-messengers .messengers-icons {
-    justify-content: center;
-  }
-}
-
-/* Small Mobile (480px) */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-  .hero h1 {
-    font-size: 48px;
-  }
-  .hero-sub {
-    font-size: 18px;
-  }
-  .section-title {
-    font-size: 28px;
-  }
-  .product-card img {
-    width: 140px;
-  }
-  .messenger-icon {
-    width: 44px;
-    height: 44px;
-  }
-  .messenger-icon img {
-    width: 24px;
-    height: 24px;
-  }
-  .btn-submit {
-    padding: 12px 24px;
-    font-size: 14px;
-  }
-  .order-header h2 {
-    font-size: 28px;
-  }
-  .features-visual img {
-    width: 200px;
-  }
-  .badge {
-    flex-direction: column;
-    text-align: center;
-  }
-  .feature-card {
-    flex-direction: column;
-    text-align: center;
-  }
-  .feature-icon {
-    margin: 0 auto;
-  }
-  .components-visual {
-    padding: 20px;
-  }
-  .age-tab {
-    padding: 14px 16px;
-  }
-  .age-tab strong {
-    font-size: 18px;
-  }
-  .footer-links {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .footer-copyright {
-    text-align: center;
-  }
-}
-/* Добавьте в конец media.css */
-
-@media (max-width: 1024px) {
-  .about-intro {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .about-intro-img {
-    min-height: 250px;
     order: -1;
   }
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-product img {
+    max-width: 260px;
   }
-}
+  .hero-bottom h2 {
+    font-size: 24px;
+  }
+  .hero-bottom p {
+    font-size: 16px;
+  }
 
-@media (max-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
+  .about {
+    padding: 60px 0 40px;
   }
-  .about-showcase {
-    gap: 20px;
-  }
-  .showcase-box {
-    width: 160px;
-  }
-}
-
-@media (max-width: 480px) {
-  .showcase-box {
-    width: 130px;
+  .about-main-title {
+    margin-bottom: 30px;
+    font-size: 22px;
   }
   .about-intro-img {
     min-height: 200px;
@@ -220,5 +169,158 @@
   }
   .about-intro-img img {
     max-width: 180px;
+  }
+
+  .about-steps {
+    grid-template-columns: 1fr;
+  }
+  .action-group.center {
+    justify-content: center;
+  }
+
+  .bottom-boxes {
+    gap: 20px;
+  }
+  .bottom-boxes img {
+    width: 140px;
+  }
+
+  .audience {
+    min-height: 500px;
+  }
+  .audience-title {
+    text-align: center;
+    max-width: 100%;
+  }
+  .audience-cards {
+    flex-direction: column;
+  }
+  .audience-card {
+    text-align: center;
+  }
+
+  .features-left {
+    text-align: center;
+  }
+  .ingredients-list {
+    justify-content: center;
+  }
+  .features-right img {
+    width: 220px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  .product-card {
+    aspect-ratio: auto;
+    min-height: auto;
+  }
+  .product-blue img {
+    width: 180px;
+  }
+  .instruction-img {
+    width: 260px;
+  }
+
+  .faq-question {
+    font-size: 15px;
+    padding: 20px 0;
+  }
+  .faq-question svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .order {
+    padding: 60px 0;
+  }
+  .order-header h2 {
+    font-size: 28px;
+  }
+  .order-form,
+  .order-contacts {
+    padding: 30px 20px;
+  }
+
+  .form-row-group {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer {
+    padding: 40px 0 30px;
+  }
+
+  .step-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE (480px)
+   ========================================= */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 42px;
+  }
+  .hero-descr {
+    font-size: 18px;
+  }
+  .btn-primary,
+  .btn-light {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .btn-icon,
+  .btn-icon-light {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+  .about-main-title {
+    font-size: 20px;
+  }
+  .components-title {
+    font-size: 24px;
+  }
+  .component-item h3 {
+    font-size: 16px;
+  }
+  .component-item p {
+    font-size: 13px;
+  }
+  .audience-age {
+    font-size: 20px;
+  }
+  .audience-desc {
+    font-size: 12px;
+  }
+  .product-card {
+    padding: 30px 20px;
+  }
+  .product-title {
+    font-size: 20px;
+  }
+  .instruction-title {
+    font-size: 18px;
+  }
+  .step {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .messenger-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .messenger-icon img {
+    width: 30px;
+    height: 30px;
   }
 }

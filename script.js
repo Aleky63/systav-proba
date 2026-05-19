@@ -1,20 +1,18 @@
 // FAQ аккордеон
 document.querySelectorAll(".faq-question").forEach((button) => {
   button.addEventListener("click", () => {
-    const isOpen = button.getAttribute("aria-expanded") === "true";
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", !expanded);
     const answer = button.nextElementSibling;
-
-    if (!isOpen) {
-      button.setAttribute("aria-expanded", "true");
+    if (!expanded) {
       answer.classList.add("open");
     } else {
-      button.setAttribute("aria-expanded", "false");
       answer.classList.remove("open");
     }
   });
 });
 
-// Мобильное меню (hamburger)
+// Мобильное меню
 const hamburger = document.querySelector(".nav-hamburger");
 const navLinks = document.querySelector(".nav-links");
 const navActions = document.querySelector(".nav-actions");
@@ -22,7 +20,6 @@ const navActions = document.querySelector(".nav-actions");
 if (hamburger) {
   hamburger.addEventListener("click", () => {
     const isOpen = hamburger.classList.contains("open");
-
     if (!isOpen) {
       hamburger.classList.add("open");
       if (navLinks) navLinks.style.display = "flex";
@@ -37,67 +34,22 @@ if (hamburger) {
   });
 }
 
-// Плавная прокрутка для всех якорных ссылок
+// Плавная прокрутка
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
-    if (href === "#" || href === "") return;
-
-    const target = document.querySelector(href);
+    const targetId = this.getAttribute("href");
+    if (targetId === "#") return;
+    const target = document.querySelector(targetId);
     if (target) {
       e.preventDefault();
-
-      // Закрываем мобильное меню если открыто
-      if (hamburger && hamburger.classList.contains("open")) {
-        hamburger.click();
-      }
-
-      const offsetTop = target.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
+      if (hamburger && hamburger.classList.contains("open")) hamburger.click();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 });
 
-// Анимация появления элементов при скролле (опционально)
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("fade-in");
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-// Добавляем классы для анимации к секциям
-document
-  .querySelectorAll(".components, .features, .products, .faq, .order")
-  .forEach((section) => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(30px)";
-    section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(section);
-  });
-
-// Стили для анимации
-const style = document.createElement("style");
-style.textContent = `
-  .fade-in {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-`;
-document.head.appendChild(style);
-
-// Обработка отправки формы
-const form = document.querySelector(".form");
+// Отправка формы
+const form = document.querySelector(".order-form-wrap form");
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
