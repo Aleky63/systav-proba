@@ -13,32 +13,29 @@
     grid-column: 1 / -1;
   }
 
-  .about-intro {
-    grid-template-columns: 1fr;
+  .about-top {
+    flex-direction: column;
     gap: 30px;
   }
-  .about-intro-img {
-    order: -1;
+  .about-top__image {
+    width: 100%;
   }
 
-  /* Убираем таймлайн на планшетах */
-  .timeline::before,
-  .timeline-item::after {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .about-grid__col--right {
+    margin-top: 0;
+  }
+  .about-grid__col--center {
     display: none;
   }
-
-  .timeline-item.left,
-  .timeline-item.right {
-    justify-content: center;
-    padding: 0;
-    text-align: center;
+  .about-line {
+    display: none;
   }
-
-  .step-card {
-    max-width: 100%;
-  }
-  .step-icon {
-    margin: 0 auto 16px;
+  .about-card {
+    margin-top: 40px;
   }
 
   .components-wrapper {
@@ -162,24 +159,6 @@
   .about-main-title {
     margin-bottom: 30px;
     font-size: 22px;
-  }
-  .about-intro-img {
-    min-height: 200px;
-    padding: 20px;
-  }
-  .about-intro-img img {
-    max-width: 180px;
-  }
-
-  .action-group.center {
-    justify-content: center;
-  }
-
-  .bottom-boxes {
-    gap: 20px;
-  }
-  .bottom-boxes img {
-    width: 140px;
   }
 
   .audience {

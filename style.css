@@ -388,35 +388,41 @@ a {
 }
 
 /* =========================================
-   6. ABOUT (TIMELINE)
+   6. ABOUT SECTION (ИСПРАВЛЕНО)
    ========================================= */
 .about {
   background: var(--light-blue-bg);
-  padding: 80px 0 100px;
+  padding: 80px 0;
   position: relative;
-  overflow: hidden;
 }
 
-.about-main-title {
+/* ① Заголовок */
+.about__title {
   text-align: center;
+  margin-bottom: 48px;
   font-size: clamp(24px, 3vw, 32px);
   font-weight: 700;
-  margin-bottom: 60px;
   color: var(--text-dark);
   position: relative;
   z-index: 2;
 }
 
-.about-intro {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 50px;
+/* ② about-top */
+.about-top {
+  display: flex;
   align-items: center;
+  gap: 48px;
   margin-bottom: 80px;
   position: relative;
   z-index: 2;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
 }
-.about-intro-img {
+
+.about-top__image {
+  flex: 0 0 260px;
   background: linear-gradient(135deg, #d4edff, #e8f5fd);
   border-radius: 20px;
   padding: 30px;
@@ -424,35 +430,200 @@ a {
   align-items: center;
   justify-content: center;
 }
-.about-intro-img img {
-  max-width: 280px;
+
+.about-top__image img {
+  max-width: 100%;
+  height: auto;
 }
-.about-intro-text h3 {
+
+.about-top__content {
+  flex: 1;
+}
+
+.about-top__content h3 {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 16px;
   line-height: 1.4;
 }
-.about-intro-text p {
+
+.about-top__content p {
   font-size: 15px;
   color: var(--text-mid);
   margin-bottom: 20px;
   line-height: 1.6;
 }
-/* Банка по центру */
-.about-center-product {
-  text-align: center;
-  margin: 60px 0;
+
+/* ③ Grid-блок */
+.about-grid-wrap {
   position: relative;
-  z-index: 2;
+  margin-bottom: 80px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  min-height: 600px; /* Чтобы линии не обрезались */
 }
 
-.about-center-product img {
-  width: 200px;
+.about-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.about-line--top {
+  top: 20%;
+}
+
+.about-line--bottom {
+  bottom: 20%;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-grid__col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-grid__col--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px; /* Сдвиг банки вниз */
+}
+
+.about-grid__col--right {
+  margin-top: 120px; /* Шахматный сдвиг */
+}
+
+.about-box2 {
+  width: 100%;
+  max-width: 200px;
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
   animation: float 5s ease-in-out infinite;
 }
 
+/* Карточки с иконками сверху */
+.about-card {
+  background: var(--blue);
+  color: #ffffff;
+  padding: 60px 24px 24px; /* Увеличенный padding сверху для иконки */
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative; /* Для позиционирования иконки */
+  margin-top: 24px; /* Отступ сверху для выступающей иконки */
+}
+
+/* Прозрачная карточка */
+.about-card.transparent {
+  background: transparent;
+  box-shadow: none;
+  text-align: right;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.about-card.transparent p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Иконка в белом круге с синей обводкой */
+.about-card .step-icon-wrapper {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border: 3px solid var(--blue); /* Синее кольцо */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-card .step-icon {
+  width: 28px; /* Чуть меньше чтобы влезла в круг */
+  height: 28px;
+  display: block;
+  filter: none; /* Оставляем синий цвет */
+}
+
+.about-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.about-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* ④ about-bottom */
+.about-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.about-bottom__images {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.about-bottom__images img {
+  width: 180px;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+  transition: 0.3s;
+}
+
+.about-bottom__images img:hover {
+  transform: translateY(-8px);
+}
+
+.about-bottom__texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.about-bottom__texts h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.about-bottom__texts p {
+  font-size: 15px;
+  color: var(--text-mid);
+}
+
+/* Анимация банки */
 @keyframes float {
   0%,
   100% {
@@ -463,173 +634,19 @@ a {
   }
 }
 
-/* TIMELINE */
-.timeline {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto 100px;
-  padding: 0 20px;
-}
-
-/* ЛИНИЯ (Строго по центру) */
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 3px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #cbd5e1 0,
-    #cbd5e1 10px,
-    transparent 10px,
-    transparent 20px
-  );
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 60px;
-  width: 100%;
-  display: flex;
-}
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-/* Точки на линии */
-.timeline-item::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  width: 16px;
-  height: 16px;
-  background: #ffffff;
-  border: 3px solid var(--blue);
-  border-radius: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-/* ЛЕВЫЕ КАРТОЧКИ */
-.timeline-item.left {
-  justify-content: flex-end;
-  padding-right: calc(50% + 30px);
-  text-align: right;
-}
-.timeline-item.left::after {
-  left: auto;
-  right: calc(50% - 8px);
-}
-
-/* ПРАВЫЕ КАРТОЧКИ */
-.timeline-item.right {
-  justify-content: flex-start;
-  padding-left: calc(50% + 30px);
-  text-align: left;
-}
-.timeline-item.right::after {
-  left: calc(50% - 8px);
-}
-
-.step-card {
-  padding: 24px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 420px;
-  transition: 0.3s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 2;
-}
-.step-card:hover {
-  transform: translateY(-5px);
-}
-/* .step-card.white {
-  background: #ffffff;
-  border: 1px solid #e0eaf5;
-} */
-.step-card.blue {
-  background: var(--blue);
-  color: #ffffff;
-}
-
-.step-icon {
-  width: 40px;
-  height: 40px;
-  background: #ffffff;
-  border-radius: 50%;
-  padding: 8px;
-  display: block;
-  margin: 0 auto 16px;
-}
-.step-card.blue .step-icon {
-  filter: brightness(0) invert(1);
-}
-
-.step-card h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  text-align: center;
-}
-.step-card p {
-  font-size: 14px;
-  line-height: 1.5;
-  opacity: 0.9;
-}
-
-.about-bottom {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-.bottom-boxes {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 30px;
-}
-.bottom-boxes img {
-  width: 180px;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
-  transition: 0.3s;
-}
-.bottom-boxes img:hover {
-  transform: translateY(-8px);
-}
-.bottom-text h3 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.bottom-text p {
-  font-size: 15px;
-  color: var(--text-mid);
-  margin-bottom: 24px;
-}
-
 /* =========================================
-   7. COMPONENTS (ИСПРАВЛЕННЫЕ РАЗМЕРЫ)
+   7. COMPONENTS
    ========================================= */
 .components {
   background: #ffffff;
   padding: var(--section-gap) 0;
 }
-
 .components-wrapper {
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: 60px;
   align-items: stretch;
 }
-
 .components-left {
   background: linear-gradient(135deg, #2196f3, #64b5f6);
   border-radius: 24px;
@@ -641,7 +658,6 @@ a {
   position: relative;
   overflow: hidden;
 }
-
 .components-image-box {
   position: relative;
   z-index: 2;
@@ -652,7 +668,6 @@ a {
   height: auto;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
 }
-
 .components-left::before {
   content: "";
   position: absolute;
@@ -673,13 +688,11 @@ a {
   bottom: -30px;
   left: -30px;
 }
-
 .components-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .components-title {
   font-size: 34px;
   font-weight: 700;
@@ -692,14 +705,12 @@ a {
   display: block;
   margin-top: 4px;
 }
-
 .components-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px 40px;
   margin-bottom: 40px;
 }
-
 .comp-item {
   padding-left: 16px;
   border-left: 3px solid var(--blue);
