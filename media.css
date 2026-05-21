@@ -38,26 +38,13 @@
     margin-top: 40px;
   }
 
-  .components-wrapper {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .components-left {
-    min-height: 400px;
-  }
-  .components-image-box img {
-    max-width: 280px;
-  }
-  .components-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .features-grid {
+  /* Features адаптив */
+  .features-content {
     grid-template-columns: 1fr;
     gap: 50px;
     text-align: center;
   }
-  .features-text {
+  .features-left {
     align-items: center;
   }
   .feature-highlight {
@@ -72,8 +59,22 @@
     margin: 20px auto 0;
     display: inline-block;
   }
-  .features-right-col {
+  .features-right {
     align-items: center;
+  }
+
+  .components-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .components-left {
+    min-height: 400px;
+  }
+  .components-image-box img {
+    max-width: 280px;
+  }
+  .components-grid {
+    grid-template-columns: 1fr;
   }
 
   .order-grid {
@@ -173,16 +174,6 @@
   }
   .audience-card {
     text-align: center;
-  }
-
-  .features-left {
-    text-align: center;
-  }
-  .ingredients-list {
-    justify-content: center;
-  }
-  .features-right img {
-    width: 220px;
   }
 
   .products-grid {

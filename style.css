@@ -388,7 +388,7 @@ a {
 }
 
 /* =========================================
-   6. ABOUT SECTION (ИСПРАВЛЕНО)
+   6. ABOUT SECTION
    ========================================= */
 .about {
   background: var(--light-blue-bg);
@@ -462,7 +462,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
-  min-height: 600px; /* Чтобы линии не обрезались */
+  min-height: 600px;
 }
 
 .about-line {
@@ -500,11 +500,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px; /* Сдвиг банки вниз */
+  padding-top: 80px;
 }
 
 .about-grid__col--right {
-  margin-top: 120px; /* Шахматный сдвиг */
+  margin-top: 120px;
 }
 
 .about-box2 {
@@ -518,12 +518,12 @@ a {
 .about-card {
   background: var(--blue);
   color: #ffffff;
-  padding: 60px 24px 24px; /* Увеличенный padding сверху для иконки */
+  padding: 60px 24px 24px;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  position: relative; /* Для позиционирования иконки */
-  margin-top: 24px; /* Отступ сверху для выступающей иконки */
+  position: relative;
+  margin-top: 24px;
 }
 
 /* Прозрачная карточка */
@@ -551,7 +551,7 @@ a {
   width: 48px;
   height: 48px;
   background: #ffffff;
-  border: 3px solid var(--blue); /* Синее кольцо */
+  border: 3px solid var(--blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -560,10 +560,10 @@ a {
 }
 
 .about-card .step-icon {
-  width: 28px; /* Чуть меньше чтобы влезла в круг */
+  width: 28px;
   height: 28px;
   display: block;
-  filter: none; /* Оставляем синий цвет */
+  filter: none;
 }
 
 .about-card h4 {
@@ -635,7 +635,98 @@ a {
 }
 
 /* =========================================
-   7. COMPONENTS
+   7. FEATURES SECTION (ИСПРАВЛЕНО ПО МАКЕТУ)
+   ========================================= */
+.features {
+  background: var(--gray-bg);
+  padding: var(--section-gap) 0;
+}
+
+.features-main-title {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 2;
+}
+
+.features-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Левая часть */
+.features-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.features-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-mid);
+}
+
+.feature-highlight {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.feature-highlight h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-dark);
+}
+
+.feature-highlight p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+
+/* Центральная часть: Банка + Список */
+.features-center {
+  text-align: center;
+  position: relative;
+}
+
+.product-image-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.product-image-wrap img {
+  max-width: 260px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  transform: rotate(-5deg);
+}
+
+/* Правая часть */
+.features-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* =========================================
+   8. COMPONENTS
    ========================================= */
 .components {
   background: #ffffff;
@@ -728,7 +819,7 @@ a {
 }
 
 /* =========================================
-   8. AUDIENCE
+   9. AUDIENCE
    ========================================= */
 .audience {
   position: relative;
@@ -803,112 +894,6 @@ a {
 }
 .audience-card.active .audience-desc {
   color: var(--blue);
-}
-
-/* =========================================
-   9. FEATURES
-   ========================================= */
-.features {
-  background: #f8f9fa;
-  padding: var(--section-gap) 0;
-}
-.features-main-title {
-  font-size: clamp(28px, 4vw, 36px);
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: var(--text-dark);
-}
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-.features-text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.features-desc {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--text-mid);
-}
-.features-center {
-  text-align: center;
-  position: relative;
-}
-.product-image-wrap {
-  position: relative;
-  display: inline-block;
-}
-.product-image-wrap img {
-  max-width: 260px;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
-  transform: rotate(-5deg);
-}
-.ingredients-plate {
-  position: absolute;
-  top: 40px;
-  right: -80px;
-  background: white;
-  padding: 16px 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  min-width: 160px;
-  text-align: left;
-}
-.ingredients-list {
-  list-style: none;
-}
-.ingredients-list li {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.ingredients-list li span {
-  width: 16px;
-  height: 16px;
-  background: #e3f2fd;
-  color: var(--blue);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  flex-shrink: 0;
-}
-.features-right-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-}
-.feature-highlight {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-.feature-icon {
-  width: 32px;
-  height: 32px;
-  color: var(--blue);
-  flex-shrink: 0;
-}
-.feature-highlight h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 4px;
-  color: var(--text-dark);
-}
-.feature-highlight p {
-  font-size: 14px;
-  color: var(--text-mid);
-  line-height: 1.4;
 }
 
 /* =========================================
