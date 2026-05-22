@@ -2,6 +2,7 @@
    TABLET (1024px)
    ========================================= */
 @media (max-width: 1024px) {
+  /* Hero */
   .hero-content {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -9,27 +10,25 @@
   .hero-weight {
     display: none;
   }
-  .hero-bottom {
-    grid-column: 1 / -1;
-  }
 
+  /* About */
   .about-top {
     flex-direction: column;
     gap: 30px;
   }
   .about-top__image {
     width: 100%;
+    flex: unset;
   }
-
   .about-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .about-grid__col--right {
-    margin-top: 0;
-  }
   .about-grid__col--center {
     display: none;
+  }
+  .about-grid__col--right {
+    margin-top: 0;
   }
   .about-line {
     display: none;
@@ -38,10 +37,10 @@
     margin-top: 40px;
   }
 
-  /* Features адаптив */
+  /* Features */
   .features-content {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
     text-align: center;
   }
   .features-left {
@@ -54,29 +53,11 @@
   .features-center {
     order: -1;
   }
-  .ingredients-plate {
-    position: static;
-    margin: 20px auto 0;
-    display: inline-block;
-  }
   .features-right {
     align-items: center;
   }
 
-  .components-wrapper {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .components-left {
-    min-height: 400px;
-  }
-  .components-image-box img {
-    max-width: 280px;
-  }
-  .components-grid {
-    grid-template-columns: 1fr;
-  }
-
+  /* Order */
   .order-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -95,11 +76,8 @@
     gap: 20px;
     align-items: flex-start;
   }
-  .action-group {
-    width: 100%;
-    justify-content: flex-start;
-  }
 
+  /* Footer */
   .footer-top {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -118,6 +96,7 @@
    MOBILE (768px)
    ========================================= */
 @media (max-width: 768px) {
+  /* Nav */
   .nav-links,
   .nav-actions {
     display: none;
@@ -125,6 +104,8 @@
   .nav-hamburger {
     display: flex;
   }
+
+  /* Hero */
   .hero-container {
     padding-top: 100px;
   }
@@ -136,9 +117,7 @@
   .hero-text {
     text-align: center;
   }
-  .hero-buttons,
-  .about-buttons,
-  .components-button {
+  .hero .action-group {
     justify-content: center;
   }
   .hero-product {
@@ -154,14 +133,18 @@
     font-size: 16px;
   }
 
+  /* About */
   .about {
     padding: 60px 0 40px;
   }
-  .about-main-title {
-    margin-bottom: 30px;
+  .about__title {
     font-size: 22px;
   }
+  .action-group {
+    justify-content: center;
+  }
 
+  /* Audience */
   .audience {
     min-height: 500px;
   }
@@ -176,13 +159,13 @@
     text-align: center;
   }
 
+  /* Products */
   .products-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
   }
   .product-card {
     aspect-ratio: auto;
-    min-height: auto;
   }
   .product-blue img {
     width: 180px;
@@ -191,39 +174,22 @@
     width: 260px;
   }
 
+  /* FAQ */
   .faq-question {
     font-size: 15px;
     padding: 20px 0;
   }
-  .faq-question svg {
-    width: 20px;
-    height: 20px;
-  }
 
-  .order {
-    padding: 60px 0;
-  }
-  .order-header h2 {
-    font-size: 28px;
-  }
-  .order-form,
-  .order-contacts {
-    padding: 30px 20px;
-  }
-
+  /* Order */
   .form-row-group {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .footer {
-    padding: 40px 0 30px;
-  }
-
+  /* Step icon */
   .step-icon {
     width: 36px;
     height: 36px;
-    margin-bottom: 12px;
   }
 }
 
@@ -237,43 +203,25 @@
   .hero-descr {
     font-size: 18px;
   }
-  .btn-primary,
-  .btn-light {
+
+  .btn {
     padding: 12px 20px;
     font-size: 14px;
   }
-  .btn-icon,
-  .btn-icon-light {
+  .btn-icon {
     width: 42px;
     height: 42px;
     font-size: 18px;
   }
-  .section-title {
-    font-size: 28px;
-  }
-  .about-main-title {
-    font-size: 20px;
-  }
-  .components-title {
-    font-size: 26px;
-  }
-  .comp-item h3 {
-    font-size: 16px;
-  }
-  .comp-item p {
-    font-size: 13px;
-  }
-  .audience-age {
-    font-size: 20px;
-  }
-  .audience-desc {
-    font-size: 12px;
-  }
+
   .product-card {
     padding: 30px 20px;
   }
   .product-title {
     font-size: 20px;
+  }
+  .product-price {
+    font-size: 28px;
   }
   .instruction-title {
     font-size: 18px;
@@ -282,6 +230,7 @@
     font-size: 14px;
     padding: 12px;
   }
+
   .messenger-icon {
     width: 44px;
     height: 44px;
@@ -289,5 +238,9 @@
   .messenger-icon img {
     width: 30px;
     height: 30px;
+  }
+
+  .order-title {
+    font-size: 28px;
   }
 }
