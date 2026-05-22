@@ -475,11 +475,11 @@ a {
 }
 
 .about-line--top {
-  top: 20%;
+  top: 0;
 }
 
 .about-line--bottom {
-  bottom: 20%;
+  bottom: -40%;
 }
 
 .about-grid {
