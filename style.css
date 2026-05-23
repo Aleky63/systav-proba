@@ -291,7 +291,7 @@ a {
   justify-content: center;
 }
 .hero-product img {
-  max-width: 340px;
+  max-width: 400px;
   filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.25));
   animation: float 5s ease-in-out infinite;
 }
@@ -472,7 +472,7 @@ a {
 
 .about-box2 {
   width: 100%;
-  max-width: 200px;
+  max-width: 400px;
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
   animation: float 5s ease-in-out infinite;
 }
@@ -694,7 +694,7 @@ a {
   margin-bottom: 20px;
 }
 .instruction-img {
-  width: 360px;
+  width: 560px;
   margin: 0 auto 20px;
 }
 .instruction-steps {
