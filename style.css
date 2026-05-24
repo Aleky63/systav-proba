@@ -13,7 +13,7 @@
   --blue-light: #64b5f6;
   --white: #ffffff;
   --gray-bg: #f8f9fa;
-  --light-blue-bg: #f0f7fc;
+  --light-blue-bg: #eaf2f8;
   --text-dark: #1a2233;
   --text-mid: #455a74;
   --text-light: #7a8fa6;
@@ -48,7 +48,7 @@ a {
 }
 
 .container {
-  max-width: 1320px;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
